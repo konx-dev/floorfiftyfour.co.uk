@@ -1,0 +1,9 @@
+query {
+  entries(site: "floorFiftyFour",section: "homeFloorFiftyFour") {
+      hero {
+        heading
+        subHeading
+        copy
+    }
+	}
+}

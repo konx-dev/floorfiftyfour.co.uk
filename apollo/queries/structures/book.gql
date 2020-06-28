@@ -1,0 +1,11 @@
+query book($slug: [String!]) {
+    entry (site: "floorFiftyFour",section: "books", slug: $slug) {
+        id,
+        title
+        hero {
+          heading
+          subHeading
+          copy
+        }
+    }
+}

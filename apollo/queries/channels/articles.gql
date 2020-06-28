@@ -1,0 +1,10 @@
+query {
+  entries(site: "floorFiftyFour",section: "blogFloorFiftyFour") {
+      slug
+      hero {
+        heading
+        subHeading
+        copy
+    }
+	}
+}

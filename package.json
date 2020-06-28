@@ -1,0 +1,24 @@
+{
+  "name": "main-site",
+  "version": "1.0.0",
+  "description": "Floor Fifty Four - Nuxt.js build",
+  "author": "Oliver Cox",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "graphql": "^15.1.0",
+    "nuxt": "^2.13.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^2.0.0"
+  }
+}
