@@ -7,7 +7,7 @@
           {{ entry.hero[0].heading }}
         </h1>
         <div v-html="entry.hero[0].subHeading" class="text-base md:text-2xl font-bold mb-4"></div>
-        <div v-html="entry.hero[0].copy" class="text-base md:text-2xl mb-8"></div>
+        <div v-html="entry.hero[0].copy" class="text-base md:text-2xl mb-8 "></div>
       </div>
     </div>
   </div>
@@ -36,3 +36,6 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+
+</style>

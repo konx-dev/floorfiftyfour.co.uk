@@ -13,7 +13,8 @@ export default {
       { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Bebas+Neue&display=swap' },
     ]
   },
   /*
@@ -25,6 +26,22 @@ export default {
   */
   css: [
   ],
+  fontawesome: {
+    icons: {
+      solid: ['faPhoneAlt','faEnvelope','faCheckSquare','faChevronDown','faChevronUp','faChevronRight','faShoppingBasket',
+      'faUser','faSearch','faBars','faTimes','faAngleRight','faTrashAlt','faBolt','faChevronLeft','faCheck',
+      'faLongArrowAltRight','faDownload','faPlay','faPause','faFilePdf'],
+      regular: ['faCheckSquare'],
+      brands: ['faFacebookF','faTwitter','faLinkedinIn']
+    }
+  },
+  styleResources: {
+    scss: [
+      'assets/scss/_vars.scss',
+      'assets/scss/_mixin.scss',
+      'assets/scss/_globals.scss'
+    ]
+  },
   /*
   ** Plugins to load before mounting the App
   */
@@ -36,6 +53,10 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    'nuxt-purgecss',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-140024933-2'
+    }]
   ],
   /*
   ** Nuxt.js modules
