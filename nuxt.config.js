@@ -28,9 +28,8 @@ export default {
   ],
   fontawesome: {
     icons: {
-      solid: ['faPhoneAlt','faEnvelope','faCheckSquare','faChevronDown','faChevronUp','faChevronRight','faShoppingBasket',
-      'faUser','faSearch','faBars','faTimes','faAngleRight','faTrashAlt','faBolt','faChevronLeft','faCheck',
-      'faLongArrowAltRight','faDownload','faPlay','faPause','faFilePdf'],
+      solid: ['faCheckSquare','faChevronDown','faChevronUp','faChevronRight', 'faUser','faSearch','faBars','faTrashAlt','faChevronLeft','faCheck',
+      'faLongArrowAltRight'],
       regular: ['faCheckSquare'],
       brands: ['faFacebookF','faTwitter','faLinkedinIn']
     }
@@ -46,6 +45,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/global',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -55,7 +55,7 @@ export default {
     '@nuxtjs/tailwindcss',
     'nuxt-purgecss',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-140024933-2'
+      id: 'XX-XXXXXXX-X' // UA-140024933-2
     }]
   ],
   /*

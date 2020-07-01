@@ -7,7 +7,11 @@
           {{ entry.hero[0].heading }}
         </h1>
         <div v-html="entry.hero[0].subHeading" class="text-base md:text-2xl font-bold mb-4"></div>
-        <div v-html="entry.hero[0].copy" class="text-base md:text-2xl mb-8 "></div>
+        <div v-html="entry.hero[0].description" class="text-base md:text-2xl mb-8 "></div>
+        <div v-if="entry.hero[0].featuredImage[0]">
+          <v-img :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" img-class="w-full h-full"/>
+        </div>
+        
       </div>
     </div>
   </div>
