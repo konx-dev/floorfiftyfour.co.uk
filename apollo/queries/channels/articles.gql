@@ -1,10 +1,11 @@
 query {
   entries(site: "floorFiftyFour",section: "blogFloorFiftyFour") {
       slug
+      postDate
       hero {
         heading
         subHeading
-        copy
+        description
     }
 	}
 }

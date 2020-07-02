@@ -1,27 +1,23 @@
 <template>
-    <div>
-        <navigation></navigation>
-        <div>Blog Index</div>
-        <div class="border border-black" v-for="article in entries" :key="article.id">
-            <h4>{{ article.hero[0].heading }}</h4>
-            <div v-html="article.hero[0].subHeading"></div>
-            <div v-html="article.hero[0].copy"></div>
-            <nuxt-link :to="'/blog/' + article.slug">{{ article.slug }}</nuxt-link>
+    <div class="bg-black h-full">
+        <div class="bg-black h-full text-white text-center py-32 font-primary" v-for="item in entries" :key="item.id">
+            <h1 class="font-bold text-5xl">{{ item.hero[0].heading }}</h1>
+            <div class="text-1xl" v-html="item.hero[0].subHeading"></div>
         </div>
+        <articles></articles>
     </div>
 </template>
 <script>
-import Navigation from '~/components/Globals/Navigation'
-
+import Articles from '~/components/Articles'
 
 // GraphQL Queries
-import articles from '~/apollo/queries/channels/articles'
+import blogOverview from '~/apollo/queries/page/blogOverview'
 
 export default {
     apollo: {
         entries: {
             prefetch: true,
-            query: articles,
+            query: blogOverview
         }
     },
     data() {
@@ -29,7 +25,7 @@ export default {
         }
     },
     components: {
-        Navigation
+        Articles
     }
 }
 </script>

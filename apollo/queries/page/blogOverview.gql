@@ -1,0 +1,13 @@
+query {
+  entries(site: "floorFiftyFour",section: "blogOverviewFloorFiftyFour") {
+      hero {
+        heading
+        subHeading
+        description
+        featuredImage {
+          title
+          filename
+        }
+    }
+	}
+}

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>Navigation</div>
+        <div>Navigation (TBC)</div>
         <div>
             <nuxt-link to="/">Home</nuxt-link>
             <nuxt-link to="/books">Books</nuxt-link>
