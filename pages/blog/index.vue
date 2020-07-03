@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black h-full">
+    <div class="h-full bg-grey">
         <div class="bg-black h-full text-white text-center py-32 font-primary" v-for="item in entries" :key="item.id">
             <h1 class="font-bold text-5xl">{{ item.hero[0].heading }}</h1>
             <div class="text-1xl" v-html="item.hero[0].subHeading"></div>

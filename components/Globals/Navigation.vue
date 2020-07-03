@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="border-b border-black">
         <div>Navigation (TBC)</div>
         <div>
             <nuxt-link to="/">Home</nuxt-link>

@@ -8,6 +8,20 @@ module.exports = {
   theme: {
     fontFamily: {
       'primary': ['Raleway','sans-serif']
+    },
+    colors: {
+      
+      black: {
+        default: '#000000',
+      },
+      white: {
+        default: '#FFFFFF',
+      },
+      grey: {
+        lighter: '#???',
+        default: '#ddd',
+        darker: '#???',
+      }
     }
   },
   variants: {},

@@ -1,6 +1,5 @@
 <template>
   <div class="h-auto md:h-full hero-image py-10 md:py-20">
-    <navigation></navigation>
     <div class="container mx-auto max-w-4xl">
       <div v-for="entry in entries" :key="entry.id" class="font-display px-4 md:px-0">
         <h1 class="text-2xl md:text-6xl font-bold mb-6" id="signup_anchor">
@@ -17,7 +16,6 @@
   </div>
 </template>
 <script>
-import Navigation from '~/components/Globals/Navigation'
 
 // GraphQL Queries
 import home from '~/apollo/queries/page/home'
@@ -36,7 +34,6 @@ export default {
     }
   },
   components: {
-    Navigation
   }
 }
 </script>
