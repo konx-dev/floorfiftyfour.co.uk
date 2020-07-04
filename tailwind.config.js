@@ -20,7 +20,12 @@ module.exports = {
       grey: {
         lighter: '#???',
         default: '#ddd',
-        darker: '#???',
+        darker: '#424242',
+      },
+      debug: {
+        red: 'red',
+        blue: 'blue',
+        yellow: 'yellow'
       }
     }
   },
