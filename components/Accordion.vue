@@ -2,12 +2,12 @@
     <div class="accordion__container bg-grey-darker">
         <div v-for="(article, index) in articles" :key="index">
             
-            <div @click="activeItemCheck(index)" class="accordion__card text-white px-4 py-6 md:py-12 relative z-10 bg-grey-darker text-center">
-                <h2 class="font-primary font-bold text-lg leading-tight mb-4">{{ article.hero[0].heading }}</h2>
-                <h3 class="text-xs">{{ article.postDate }}</h3>
+            <div @click="activeItemCheck(index)" class="accordion__card text-white px-4 py-6 md:py-12 relative z-10 bg-grey-darker text-center cursor-pointer">
+                <h2 class="font-primary font-bold text-lg md:text-2xl leading-tight mb-4">{{ article.hero[0].heading }}</h2>
+                <h3 class="text-xs md:text-lg">{{ article.postDate | dateFormat }}</h3>
             </div>
 
-            <div v-show="activeItem === index" class="text-left md:text-center text-white text-sm px-4 pb-6 md:pb-12">
+            <div v-show="activeItem === index" class="text-left md:text-center text-white text-sm md:text-lg px-4 pb-6">
                 <div class="" v-html="article.hero[0].description"></div>
                 <div class="text-center my-6">
                     <nuxt-link class="" :to="'/blog/' + article.slug">- Read More -</nuxt-link>
@@ -29,6 +29,44 @@ export default {
         articles: {
             type: Array,
             required: true,
+        }
+    },
+    filters: {
+        dateFormat: function(value) {
+
+            let valueArray = value.split('-')
+            let year = valueArray[0];
+            let monthNum = valueArray[1];
+
+            if (monthNum === '01') {
+                monthNum = 'January';
+            } else if (monthNum === '02') {
+                monthNum = 'February';
+            } else if (monthNum === '03') {
+                monthNum = 'March';
+            } else if (monthNum === '04') {
+                monthNum = 'April';
+            } else if (monthNum === '05') {
+                monthNum = 'May';
+            } else if (monthNum === '06') {
+                monthNum = 'June';
+            } else if (monthNum === '07') {
+                monthNum = 'July';
+            } else if (monthNum === '08') {
+                monthNum = 'August';
+            } else if (monthNum === '09') {
+                monthNum = 'September';
+            } else if (monthNum === '10') {
+                monthNum = 'October';
+            } else if (monthNum === '11') {
+                monthNum = 'November';
+            } else {
+                monthNum = 'December';
+            }
+
+            value = `${monthNum} ${year}`
+
+            return value;
         }
     },
     methods: {
