@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div>Navigation</div>
+    <div class="border-b border-black">
+        <div>Navigation (TBC)</div>
         <div>
             <nuxt-link to="/">Home</nuxt-link>
             <nuxt-link to="/books">Books</nuxt-link>

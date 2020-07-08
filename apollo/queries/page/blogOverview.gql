@@ -1,5 +1,5 @@
 query {
-  entries(site: "floorFiftyFour",section: "homeFloorFiftyFour") {
+  entries(site: "floorFiftyFour",section: "blogOverviewFloorFiftyFour") {
       hero {
         heading
         subHeading
