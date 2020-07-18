@@ -4,7 +4,11 @@ query {
       hero {
         heading
         subHeading
-        copy
+        description
+        featuredImage {
+          title
+          filename
+        }
     }
 	}
 }

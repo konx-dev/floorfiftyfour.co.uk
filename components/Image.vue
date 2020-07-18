@@ -1,7 +1,5 @@
 <template>
-    <picture>
-        <img v-bind="defaultSrc" :alt="alt" :class="buildClasses" class="block mx-auto max-w-full max-h-full object-cover" />
-    </picture>
+    <img v-bind="defaultSrc" :alt="alt" :class="buildClasses" class="block mx-auto max-w-full max-h-full object-cover" />
 </template>
 
 <script>
