@@ -1,25 +1,21 @@
 <template>
-    <!-- <div>
-        <div>Stories Index</div>
-        <div class="border border-black" v-for="story in entries" :key="story.id">
-            <h4>{{ story.hero[0].heading }}</h4>
-            <div v-html="story.hero[0].subHeading"></div>
-            <div v-html="story.hero[0].copy"></div>
-            <nuxt-link :to="'/short-stories/' + story.slug">{{ story.slug }}</nuxt-link>
-        </div>
-    </div> -->
     <div class="h-full bg-grey">
         <div class="bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
             <h1 class="font-bold text-3xl md:text-6xl">Short Stories</h1>
             <div class="text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl">sub-heading here (if needed)</div>
         </div>
 
-        <div class="px-4 md:px-0">
-            <div class="h-full w-auto border border-black container mx-auto text-black text-center py-16 md:py-32 my-5 md:my-10 font-primary relative overflow-hidden" v-for="item in entries" :key="item.id">
-                <div class="text-sm mx-auto w-64 md:w-auto md:max-w-xl relative z-10" v-html="item.hero[0].subHeading"></div>
-                <h1 class="font-bold text-1xl md:text-4xl relative z-10">{{ item.hero[0].heading }}</h1>
-                <div class="relative z-10" v-html="item.hero[0].description"></div>
-                <v-img class="" v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" img-class="w-full h-full" />
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center">
+            <div class="card cursor-pointer relative w-auto md:w-full h-full m-2 md:m-10 max-w-sm md:max-w-md" v-for="item in entries" :key="item.id">
+                <div class="absolute card__inner font-primary text-white z-10">
+                    <h1 class="font-bold text-1xl md:text-4xl my-5 relative text-center leading-tight">{{ item.hero[0].heading }}</h1>
+                    <div class="text-center" v-html="item.hero[0].description"></div>
+                </div>
+                <div class="card__inner__subheading font-bold text-black text-xs mx-auto w-48 py-2 text-center z-10" v-html="item.hero[0].subHeading"></div>
+                
+                <div class="card__image w-full h-full">
+                    <v-img class="w-full h-full object-cover" v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" />
+                </div>
             </div>
         </div>
         
@@ -48,3 +44,52 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+
+.card {
+
+    height: 400px;
+
+    &__inner {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        &__subheading {
+            background-color: white;
+            position: absolute;
+            top: 25px;
+            left: -10px;
+
+            &::before {
+                border-top: 10px solid #424242;
+                border-right: 10px solid transparent;
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                transform: scaleX(-1);
+            }
+        }
+
+    }
+
+    &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            &::before {
+                background: rgba(0,0,0,0.8);
+            }
+        }
+}
+
+
+
+</style>
