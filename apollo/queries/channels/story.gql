@@ -5,6 +5,10 @@ query book($slug: [String!]) {
         hero {
           heading
           subHeading
+          featuredImage {
+            filename
+            title
+          }
         }
         contentField
     }

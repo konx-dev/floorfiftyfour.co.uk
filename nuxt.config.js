@@ -25,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/main.scss'
   ],
   fontawesome: {
     icons: {
@@ -33,13 +34,6 @@ export default {
       regular: ['faCheckSquare'],
       brands: ['faFacebookF','faTwitter','faLinkedinIn']
     }
-  },
-  styleResources: {
-    scss: [
-      'assets/scss/_vars.scss',
-      'assets/scss/_mixin.scss',
-      'assets/scss/_globals.scss'
-    ]
   },
   /*
   ** Plugins to load before mounting the App
