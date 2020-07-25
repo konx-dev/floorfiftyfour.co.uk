@@ -1,5 +1,5 @@
 <template>
-    <div class="articles max-w-3xl mx-auto">
+    <div v-if="entries" class="articles max-w-3xl mx-auto">
         <accordion :articles="entries"></accordion>
     </div>
 </template>

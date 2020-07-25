@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full bg-grey">
+    <div v-if="entries" class="h-full bg-grey">
         <div class="bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary" v-for="item in entries" :key="item.id">
             <h1 class="font-bold text-3xl md:text-6xl">{{ item.hero[0].heading }}</h1>
             <div class="text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="item.hero[0].subHeading"></div>
