@@ -5,7 +5,6 @@ query book($slug: [String!]) {
         hero {
           heading
           subHeading
-          copy
         }
     }
 }

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="h-auto md:h-full hero overflow-hidden relative py-10 md:py-20">
     <div class="container mx-auto max-w-4xl">
       <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-4 md:px-0">
@@ -14,9 +15,15 @@
       </div>
     </div>
   </div>
+  <div class="bg-grey-lighter">
+    <FeaturedBook></FeaturedBook>
+  </div>
+</div>
+  
 </template>
 <script>
 import NewsletterForm from "~/components/Globals/NewsletterForm.vue";
+import FeaturedBook from "~/components/FeaturedBook.vue";
 
 // GraphQL Queries
 import home from '~/apollo/queries/page/home'
@@ -35,7 +42,8 @@ export default {
     }
   },
   components: {
-    NewsletterForm
+    NewsletterForm,
+    FeaturedBook
   }
 }
 </script>

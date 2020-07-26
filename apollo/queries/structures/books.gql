@@ -1,10 +1,20 @@
 query {
   entries(site: "floorFiftyFour",section: "books") {
-      slug
-      hero {
-        heading
-        subHeading
-        copy
+    slug
+    title
+    hero {
+      heading
+      subHeading
+      description
+      featuredImage {
+        title
+        filename
+      }
+      image {
+        title
+        filename
+      }
     }
-	}
+    featured
+  }
 }

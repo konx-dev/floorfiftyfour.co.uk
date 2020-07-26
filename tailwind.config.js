@@ -18,7 +18,7 @@ module.exports = {
         default: '#FFFFFF',
       },
       grey: {
-        lighter: '#???',
+        lighter: '#fafafa',
         default: '#ddd',
         darker: '#424242',
       },

@@ -25,16 +25,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/scss/main.scss'
+    '~/assets/scss/main.scss'
   ],
-  fontawesome: {
-    icons: {
-      solid: ['faCheckSquare','faChevronDown','faChevronUp','faChevronRight', 'faUser','faSearch','faBars','faTrashAlt','faChevronLeft','faCheck',
-      'faLongArrowAltRight'],
-      regular: ['faCheckSquare'],
-      brands: ['faFacebookF','faTwitter','faLinkedinIn']
-    }
-  },
   /*
   ** Plugins to load before mounting the App
   */
@@ -50,7 +42,23 @@ export default {
     'nuxt-purgecss',
     ['@nuxtjs/google-analytics', {
       id: 'XX-XXXXXXX-X' // UA-140024933-2
-    }]
+    }],
+    ['nuxt-fontawesome', {
+      component: 'font-awesome-icon', //customize component name
+      imports: [{
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['faLink']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['faRedditAlien','faTwitter','faInstagram']
+          },
+          {
+            set: '@fortawesome/free-regular-svg-icons',
+            icons: ['faEnvelope', 'faCopyright']
+          },
+      ]
+   }]
   ],
   /*
   ** Nuxt.js modules
@@ -62,7 +70,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
+    '@nuxtjs/style-resources',
   ],
+  styleResources: {
+    scss: ['~/assets/scss/*.scss']
+  },
   apollo: {  
     clientConfigs: {
       default: {
