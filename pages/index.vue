@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="h-auto md:h-full hero overflow-hidden relative py-10 md:py-20">
-    <div class="container mx-auto max-w-4xl">
+    <div class="container font-primary mx-auto max-w-4xl">
       <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-4 md:px-0">
         <h1 class="relative z-10 text-2xl md:text-6xl font-bold mb-6" id="signup_anchor">
           {{ entry.hero[0].heading }}
@@ -18,12 +18,20 @@
   <div class="bg-grey-lighter">
     <FeaturedBook></FeaturedBook>
   </div>
+  <div>
+    <FeaturedStory></FeaturedStory>  
+  </div>
+  <div>
+    <LatestBlog></LatestBlog>
+  </div>
 </div>
   
 </template>
 <script>
 import NewsletterForm from "~/components/Globals/NewsletterForm.vue";
 import FeaturedBook from "~/components/FeaturedBook.vue";
+import FeaturedStory from "~/components/FeaturedStory.vue";
+import LatestBlog from "~/components/LatestBlog.vue"
 
 // GraphQL Queries
 import home from '~/apollo/queries/page/home'
@@ -43,7 +51,9 @@ export default {
   },
   components: {
     NewsletterForm,
-    FeaturedBook
+    FeaturedBook,
+    FeaturedStory,
+    LatestBlog
   }
 }
 </script>

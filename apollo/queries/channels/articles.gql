@@ -6,6 +6,10 @@ query {
         heading
         subHeading
         description
+        featuredImage {
+          title
+          filename
+        }
     }
 	}
 }

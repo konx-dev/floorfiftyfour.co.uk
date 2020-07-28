@@ -1,6 +1,7 @@
 query {
   entries(site: "floorFiftyFour",section: "storiesFloorFiftyFour") {
       slug
+      featured
       hero {
         heading
         subHeading

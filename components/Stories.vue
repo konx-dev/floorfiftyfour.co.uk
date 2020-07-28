@@ -3,7 +3,7 @@
             <nuxt-link :to="'short-stories/' + item.slug" class="card cursor-pointer relative w-auto md:w-full h-full m-2 md:m-10 max-w-sm md:max-w-md" v-for="item in entries" :key="item.id">
                     <div class="absolute card__inner font-primary text-white z-10">
                         <h1 class="font-bold text-2xl md:text-4xl my-5 relative text-center leading-tight">{{ item.hero[0].heading }}</h1>
-                        <div class="text-center" v-html="item.hero[0].description"></div>
+                        <!-- <div class="text-center" v-html="item.hero[0].description"></div> -->
                     </div>
                     <div class="card__inner__subheading font-bold text-black text-xs mx-auto w-48 py-2 text-center z-10" v-html="item.hero[0].subHeading"></div>
                     
