@@ -1,6 +1,5 @@
 <template>
     <div>
-        <navigation></navigation>
         <div>Books Entry</div>
         <div class="border border-black">
             {{ entry }}

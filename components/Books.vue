@@ -7,7 +7,7 @@
                     <h2 class="text-2xl md:text-4xl font-bold mb-4">{{ book.title }}</h2>
                     <div class="text-lg md:text-xl" v-html="book.hero[0].description"></div>
                 </div>
-                <nuxt-link class="max-w-xs mb-4 md:mb-0" :to="'books/' + book.slug">
+                <nuxt-link :event="disabled ? '' : 'click'" class="max-w-xs mb-4 md:mb-0 cursor-default" :to="'books/' + book.slug">
                     <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" />
                 </nuxt-link>
             </div>
@@ -29,6 +29,7 @@ export default {
     },
     data() {
         return {
+            disabled: true
         }
     },
     components: {

@@ -7,16 +7,24 @@
                 <v-img class="w-full h-full object-cover" v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" />
             </div>
         </div>
-        <div class="bg-grey-darker px-4 py-12 md:py-24">
+        
+        <div class="bg-grey-darker px-4 py-10 md:py-20">
             <articles></articles>
+        </div>
+        <div class="bg-grey-darker py-5 md:py-10">
+            <div class="max-w-3xl mx-auto px-4 md:px-0">
+                <newsletter-general class="relative z-10"></newsletter-general>
+            </div>
         </div>
     </div>
 </template>
 <script>
 import Articles from '~/components/Articles'
+import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 
 // GraphQL Queries
 import blogOverview from '~/apollo/queries/page/blogOverview'
+
 
 export default {
     apollo: {
@@ -30,7 +38,8 @@ export default {
         }
     },
     components: {
-        Articles
+        Articles,
+        NewsletterGeneral
     }
 }
 </script>

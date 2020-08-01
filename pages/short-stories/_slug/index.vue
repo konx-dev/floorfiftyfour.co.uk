@@ -9,11 +9,16 @@
         <div class="container mx-auto bg-white px-4 py-12 md:py-24 sm:mt-12 md:mt-24 ">
             <div class="story-view__copy text-black text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
+        <div class="bg-grey-darker py-5 md:py-10">
+            <div class="max-w-3xl mx-auto px-4 md:px-0">
+                <newsletter-general :message="storyMessage" class="relative z-10"></newsletter-general>
+            </div>
+        </div>
     </div>
 
 </template>
 <script>
-import Navigation from '~/components/Globals/Navigation'
+import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 
 // GraphQL Queries
 import story from '~/apollo/queries/channels/story'
@@ -22,6 +27,7 @@ export default {
 
     data() {
         return {
+            storyMessage: "If you're reading this, you're probably already part of the newsletter. It's the newsletter preview, after all. Still, on the off chance you're not - and would like to be - sign up below!"
         }
     },
 
@@ -37,7 +43,7 @@ export default {
         }
     },
     components: {
-        Navigation
+        NewsletterGeneral
     }
 }
 </script>

@@ -1,0 +1,8 @@
+query {
+  globalSets (site: "floorFiftyFour") {
+    newsletterBanner {
+      filename
+      title
+    }
+  }
+}

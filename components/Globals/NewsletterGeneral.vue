@@ -1,12 +1,12 @@
 <template>
   <div class="text-white">
-    <div v-if="banner">
-      <v-img class="w-full h-full object-cover" :src="banner[0].filename" :alt="banner[0].title" />
+    <div v-if="globalSets[0].newsletterBanner" class="">
+      <v-img class="w-full h-full object-cover" :src="globalSets[0].newsletterBanner[0].filename" :alt="globalSets[0].newsletterBanner[0].title" />
     </div>
     <div v-if="message" class="text-center text-base md:text-xl my-5">
         {{ message }}
     </div>
-    <div id="mc_embed_signup">
+    <div id="mc_embed_signup" class="mt-5">
       <form
         action="https://reddit.us18.list-manage.com/subscribe/post?u=f690ef82ee81d0bf3d78fea70&amp;id=9b23fce2c0"
         method="post"
@@ -17,7 +17,7 @@
         novalidate
       >
         <div id="mc_embed_signup_scroll" class="flex flex-col md:flex-row items-center">
-          <div class="flex flex-col mt-5 w-full">
+          <div class="flex flex-col w-full">
             <label class="mb-2 hidden text-center text-base font-bold font-display" for="mce-EMAIL"
               >Email Address</label
             >
@@ -46,7 +46,7 @@
               value="Subscribe"
               name="subscribe"
               id="mc-embedded-subscribe"
-              class="py-4 mt-5 px-24 bg-black hover:bg-grey hover:text-black cursor-pointer w-full md:w-auto"
+              class="py-4 px-24 bg-black hover:bg-grey hover:text-black cursor-pointer w-full md:w-auto"
             />
           </div>
         </div>
@@ -56,8 +56,18 @@
 </template>
 
 <script>
+// GraphQL Queries
+import newsletter from '~/apollo/queries/components/newsletter-general'
+
+
 export default {
   name: "newsletter-general",
+  apollo: {
+    globalSets: {
+      prefetch: true,
+      query: newsletter
+    }
+  },
   props: {
     message: {
       type: String

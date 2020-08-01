@@ -27,7 +27,7 @@
   <div>
     <LatestBlog></LatestBlog>
   </div>
-  <div class="mx-auto font-primary container my-10 md:my-20">
+  <div v-if="entries" class="mx-auto font-primary container my-10 md:my-20">
     <div class="max-w-4xl mx-auto text-center my-10 px-4 md:px-0">
       <h3 class="text-2xl md:text-4xl font-bold mb-2">{{ entries[0].instafeed[0].instaTitle }}</h3>
       <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
@@ -39,8 +39,8 @@
     </div>
   </div>
   <div class="bg-grey-darker py-5 md:py-10">
-    <div class="max-w-3xl mx-auto px-4 md:px-0">
-      <newsletter-general :banner="globalSets[0].newsletterBanner" class="relative z-10"></newsletter-general>
+    <div class="max-w-4xl mx-auto px-4 md:px-0">
+      <newsletter-general class="relative z-10"></newsletter-general>
     </div>
   </div>
 </div>
@@ -66,10 +66,6 @@ export default {
 
   apollo: {
     entries: {
-      prefetch: true,
-      query: home
-    },
-    globalSets: {
       prefetch: true,
       query: home
     }
