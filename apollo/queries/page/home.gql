@@ -1,13 +1,31 @@
 query {
   entries(site: "floorFiftyFour",section: "homeFloorFiftyFour") {
-      hero {
-        heading
-        subHeading
-        description
-        featuredImage {
-          title
-          filename
-        }
+    hero {
+      heading
+      subHeading
+      description
+      featuredImage {
+        title
+        filename
+      }
+      image {
+        title
+        filename
+      }
+    }
+    instafeed {
+      instaTitle
+      subHeading
+      images {
+        title
+        filename
+      }
     }
 	}
+  globalSets (site: "floorFiftyFour") {
+    newsletterBanner {
+      filename
+      title
+    }
+  }
 }

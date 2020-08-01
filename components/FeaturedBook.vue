@@ -1,5 +1,5 @@
 <template>
-    <div v-if="entries" class="book font-primary container mx-auto max-w-4xl py-10 md:py-20">
+    <div class="book font-primary container mx-auto max-w-4xl py-10 md:py-20">
         <div v-for="book in entries" :key="book.id">
             <div v-if="book.featured" class="flex flex-col-reverse md:flex-row items-center justify-between">
                 <div class="max-w-md px-4 md:px-0">

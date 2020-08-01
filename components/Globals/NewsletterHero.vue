@@ -1,7 +1,7 @@
 <template>
   <div class="text-white">
-    <div class=" text-base md:text-xl mb-5">
-        Sign up for the Floor Fifty-Four Newsletter and receive free e-books, discounts and the chance to be a Beta-Reader!
+    <div v-if="message" class="text-base md:text-xl mb-5">
+        {{ message }}
     </div>
     <div id="mc_embed_signup">
       <form
@@ -22,7 +22,7 @@
               type="email"
               value=""
               name="EMAIL"
-              class="font-display email p-2"
+              class="font-display email p-4"
               id="mce-EMAIL"
               placeholder="kevin@floorfiftyfoor.co.uk"
               required
@@ -37,7 +37,7 @@
               value=""
             />
           </div>
-          <div class="clear font-display text-white mt-6">
+          <div class="clear font-display text-white mt-4">
             <input
               type="submit"
               value="Subscribe"
@@ -54,7 +54,12 @@
 
 <script>
 export default {
-  name: "newsletter-form"
+  name: "newsletter-hero",
+  props: {
+    message: {
+      type: String
+    }
+  }
 };
 </script>
 

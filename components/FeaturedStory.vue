@@ -1,7 +1,7 @@
 <template>
-        <div class="featured-card__container font-primary py-20 md:py-40" :style="{ backgroundImage: `url('${featuredImage}')` }">
+        <div v-if="featuredStory" class="featured-card__container font-primary py-20 md:py-40" :style="{ backgroundImage: `url('${featuredImage}')` }">
             
-            <div class="inner w-auto container relative z-10 mx-5 md:mx-auto max-w-4xl bg-white py-10 px-5 md:px-10 md:py-20">
+            <div class="inner w-auto container relative z-10 mx-5 md:mx-auto max-w-4xl bg-white px-5 md:px-10 pb-5 pt-10 md:pt-20 md:pb-10">
                 <h2 class="absolute inner__section-title text-center md:text-right text-white font-bold uppercase text-xl md:text-4xl container mx-auto max-w-4xl">
                     Featured Short Story
                 </h2>
@@ -42,8 +42,10 @@ export default {
             }
         },
         featuredImage() {
-            if (this.featuredStory.hero[0].featuredImage[0].filename) {
+            if (this.featuredStory.hero[0].featuredImage[0]) {
                 return 'https://ik.imagekit.io/2lyxtm1dps/' + this.featuredStory.hero[0].featuredImage[0].filename + '?q=80&auto=format';
+            } else {
+                return 'https://ik.imagekit.io/2lyxtm1dps/hero-dark-forest.jpg' + '?q=80&auto=format';
             }
         }
     },
