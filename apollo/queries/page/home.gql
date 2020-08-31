@@ -1,25 +1,32 @@
-query {
-  entries(site: "floorFiftyFour",section: "homeFloorFiftyFour") {
-    hero {
-      heading
-      subHeading
-      description
-      featuredImage {
-        title
-        filename
+query HomeQuery {
+  entries(section: "home") {
+    ... on home_home_Entry {
+      hero {
+        ... on hero_BlockType {
+          heading
+          subHeading
+          description
+          featuredImage {
+            title
+            filename
+          }
+          image {
+            title
+            filename
+          }
+        }
       }
-      image {
-        title
-        filename
+      instafeed {
+        ... on instafeed_BlockType {
+          id
+          instaTitle
+          subHeading
+          images {
+            title
+            filename
+          }
+        }
       }
     }
-    instafeed {
-      instaTitle
-      subHeading
-      images {
-        title
-        filename
-      }
-    }
-	}
+  }
 }

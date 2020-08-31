@@ -1,20 +1,24 @@
-query {
-  entries(site: "floorFiftyFour",section: "books") {
+query BooksQuery {
+  entries(section: "books") {
     slug
     title
-    hero {
-      heading
-      subHeading
-      description
-      featuredImage {
-        title
-        filename
+    ... on books_books_Entry {
+      hero {
+        ... on hero_BlockType {
+          heading
+          subHeading
+          description
+          featuredImage {
+            title
+            filename
+          }
+          image {
+            filename
+            title
+          }
+        }
       }
-      image {
-        title
-        filename
-      }
+      featured
     }
-    featured
   }
 }

@@ -1,13 +1,17 @@
-query {
-  entries(site: "floorFiftyFour",section: "blogOverviewFloorFiftyFour") {
+query BlogOverviewQuery {
+  entries(section: "blogOverview") {
+    ... on blogOverview_blogOverview_Entry {
       hero {
-        heading
-        subHeading
-        description
-        featuredImage {
-          title
-          filename
+        ... on hero_BlockType {
+          heading
+          subHeading
+          description
+          featuredImage {
+            title
+            filename
+          }
         }
+      }
     }
-	}
+  }
 }

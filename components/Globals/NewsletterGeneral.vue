@@ -1,6 +1,6 @@
 <template>
   <div class="text-white">
-    <div v-if="globalSets[0].newsletterBanner" class="">
+    <div v-if="globalSets" class="">
       <v-img class="w-full h-full object-cover" :src="globalSets[0].newsletterBanner[0].filename" :alt="globalSets[0].newsletterBanner[0].title" />
     </div>
     <div v-if="message" class="text-center text-base md:text-xl my-5">

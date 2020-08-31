@@ -1,15 +1,19 @@
-query book($slug: [String!]) {
-    entry (site: "floorFiftyFour",section: "storiesFloorFiftyFour", slug: $slug) {
-        id,
-        title
-        hero {
+query BlogArticle($slug: [String!]) {
+  entry(slug: $slug) {
+    id
+    title
+    ... on shortStories_shortStories_Entry {
+      hero {
+        ... on hero_BlockType {
           heading
           subHeading
           featuredImage {
-            filename
             title
+            filename
           }
         }
-        contentField
+      }
+      contentField
     }
+  }
 }

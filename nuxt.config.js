@@ -78,7 +78,7 @@ export default {
   apollo: {  
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.BACKEND_URL || "https://staging.molecule.konx.dev/api"
+        httpEndpoint: process.env.BACKEND_URL || "https://dev.floorfiftyfour.konx.dev/api"
       }
     }
   },

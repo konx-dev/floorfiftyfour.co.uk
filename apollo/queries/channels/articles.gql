@@ -1,15 +1,19 @@
-query {
-  entries(site: "floorFiftyFour",section: "blogFloorFiftyFour") {
-      slug
-      postDate
+query ArticlesQuery {
+  entries(section: "blogArticles") {
+    slug
+    postDate
+    ... on blogArticles_blogArticles_Entry {
       hero {
-        heading
-        subHeading
-        description
-        featuredImage {
-          title
-          filename
+        ... on hero_BlockType {
+          heading
+          subHeading
+          description
+          featuredImage {
+            title
+            filename
+          }
         }
+      }
     }
-	}
+  }
 }

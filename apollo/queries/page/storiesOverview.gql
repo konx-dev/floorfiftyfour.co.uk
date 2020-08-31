@@ -1,13 +1,19 @@
-query {
-  entries(site: "floorFiftyFour",section: "storiesOverviewFloorFiftyFour") {
+query MyQuery {
+  entries(section: "shortStoriesOverview") {
+    ... on shortStoriesOverview_shortStoriesOverview_Entry {
+      id
       hero {
-        heading
-        subHeading
-        description
-        featuredImage {
-          title
-          filename
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          description
+          featuredImage {
+            filename
+            title
+          }
         }
+      }
     }
-	}
+  }
 }

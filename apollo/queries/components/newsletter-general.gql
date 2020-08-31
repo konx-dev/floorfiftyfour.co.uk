@@ -1,8 +1,12 @@
-query {
-  globalSets (site: "floorFiftyFour") {
-    newsletterBanner {
-      filename
-      title
+query GlobalQuery {
+  globalSets {
+    ... on banners_GlobalSet {
+      id
+      name
+      newsletterBanner {
+        filename
+        title
+      }
     }
   }
 }
