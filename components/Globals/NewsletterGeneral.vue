@@ -57,7 +57,7 @@
 
 <script>
 // GraphQL Queries
-import newsletter from '~/apollo/queries/components/newsletter-general'
+import newsletter from '~/apollo/queries/globals'
 
 
 export default {

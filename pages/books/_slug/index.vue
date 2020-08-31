@@ -7,7 +7,6 @@
     </div>
 </template>
 <script>
-import Navigation from '~/components/Globals/Navigation'
 
 // GraphQL Queries
 import book from '~/apollo/queries/structures/book'

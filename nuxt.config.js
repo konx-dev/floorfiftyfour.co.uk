@@ -47,7 +47,7 @@ export default {
       component: 'font-awesome-icon', //customize component name
       imports: [{
             set: '@fortawesome/free-solid-svg-icons',
-            icons: ['faLink']
+            icons: ['faLink','faBars','faTimes']
           },
           {
             set: '@fortawesome/free-brands-svg-icons',

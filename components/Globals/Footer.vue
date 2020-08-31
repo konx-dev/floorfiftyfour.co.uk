@@ -5,9 +5,9 @@
         href="https://www.reddit.com/r/RJHuntWrites/"
         target="_blank"
         rel="nofollow"
-        class="icon-circle icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+        class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon :icon="['fab', 'reddit-alien']" />
+        <font-awesome-icon class="w-5 h-auto" :icon="['fab', 'reddit-alien']" />
       </a>
       <a
         href="https://twitter.com/RJHUNTWRITES"

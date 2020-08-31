@@ -1,9 +1,12 @@
 query GlobalQuery {
   globalSets {
-    ... on banners_GlobalSet {
-      id
+    ... on general_GlobalSet {
       name
       newsletterBanner {
+        title
+        filename
+      }
+      imageSingle {
         filename
         title
       }
