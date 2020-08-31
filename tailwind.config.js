@@ -13,12 +13,15 @@ module.exports = {
       
       black: {
         default: '#000000',
+        80: 'rgba(0,0,0,0.8)',
+        60: 'rgba(0,0,0,0.6)'
       },
       white: {
         default: '#FFFFFF',
+        80: 'rgba(255,255,255,0.8)',
       },
       grey: {
-        lighter: '#???',
+        lighter: '#fafafa',
         default: '#ddd',
         darker: '#424242',
       },
@@ -28,6 +31,9 @@ module.exports = {
         yellow: 'yellow'
       }
     }
+  },
+  future: {
+    removeDeprecatedGapUtilities: true,
   },
   variants: {},
   plugins: []

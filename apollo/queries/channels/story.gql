@@ -1,19 +1,19 @@
-query ArticlesQuery {
-  entries(section: "blogArticles") {
-    slug
-    postDate
-    ... on blogArticles_blogArticles_Entry {
+query BlogArticle($slug: [String!]) {
+  entry(slug: $slug) {
+    id
+    title
+    ... on shortStories_shortStories_Entry {
       hero {
         ... on hero_BlockType {
           heading
           subHeading
-          description
           featuredImage {
             title
             filename
           }
         }
       }
+      contentField
     }
   }
 }

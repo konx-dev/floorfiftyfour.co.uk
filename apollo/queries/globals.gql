@@ -1,0 +1,15 @@
+query GlobalQuery {
+  globalSets {
+    ... on general_GlobalSet {
+      name
+      newsletterBanner {
+        title
+        filename
+      }
+      imageSingle {
+        filename
+        title
+      }
+    }
+  }
+}

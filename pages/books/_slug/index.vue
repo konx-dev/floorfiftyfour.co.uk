@@ -1,6 +1,5 @@
 <template>
     <div>
-        <navigation></navigation>
         <div>Books Entry</div>
         <div class="border border-black">
             {{ entry }}
@@ -8,7 +7,6 @@
     </div>
 </template>
 <script>
-import Navigation from '~/components/Globals/Navigation'
 
 // GraphQL Queries
 import book from '~/apollo/queries/structures/book'
@@ -32,7 +30,7 @@ export default {
         }
     },
     components: {
-        Navigation
+        
     }
 }
 </script>

@@ -1,16 +1,16 @@
-query ArticlesQuery {
-  entries(section: "blogArticles") {
-    slug
-    postDate
-    ... on blogArticles_blogArticles_Entry {
+query MyQuery {
+  entries(section: "shortStoriesOverview") {
+    ... on shortStoriesOverview_shortStoriesOverview_Entry {
+      id
       hero {
         ... on hero_BlockType {
+          id
           heading
           subHeading
           description
           featuredImage {
-            title
             filename
+            title
           }
         }
       }
