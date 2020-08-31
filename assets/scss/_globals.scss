@@ -14,3 +14,14 @@
     padding: 1rem 2.5rem;
 }
 
+.article-view {
+    
+    &__copy {
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.75;
+        }
+    }
+}
+
