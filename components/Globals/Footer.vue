@@ -7,7 +7,7 @@
         rel="nofollow"
         class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon class="w-5 h-auto" :icon="['fab', 'reddit-alien']" />
+        <font-awesome-icon class="w-5 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
       </a>
       <a
         href="https://twitter.com/RJHUNTWRITES"
@@ -54,6 +54,10 @@ export default {
 
   background: black;
   color: white;
+
+  svg {
+    padding-top: 2px;
+  }
 
   &--reddit {
     background: #ff5700;

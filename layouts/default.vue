@@ -1,5 +1,5 @@
 <template>
-  <div class="global__overlay">
+  <div class>
     <header-main></header-main>
     <nuxt />
     <footer-main></footer-main>
