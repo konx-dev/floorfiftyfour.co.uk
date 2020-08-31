@@ -54,7 +54,7 @@ export default {
     
     &__copy {
 
-        p {
+        /deep/ p {
             margin-bottom: 20px;
             line-height: 1.75;
         }

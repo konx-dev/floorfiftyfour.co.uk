@@ -7,7 +7,7 @@
         rel="nofollow"
         class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon class="w-5 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
+        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
       </a>
       <a
         href="https://twitter.com/RJHUNTWRITES"
@@ -15,13 +15,13 @@
         rel="nofollow"
         class="icon-circle icon-circle--twitter mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon class="w-5 mx-auto h-auto" :icon="['fab', 'twitter']" />
+        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'twitter']" />
       </a>
       <a
         href="mailto:floorfiftyfour@gmail.com"
         class="icon-circle icon-circle--email mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon class="w-5 mx-auto h-auto" :icon="['far', 'envelope']" />
+        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['far', 'envelope']" />
       </a>
       <a
         href="https://www.instagram.com/floorfiftyfourofficial/"
@@ -29,7 +29,7 @@
         rel="nofollow"
         class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
       >
-        <font-awesome-icon class="w-5 mx-auto h-auto" :icon="['fab', 'instagram']" />
+        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'instagram']" />
       </a>
     </div>
     <div class="flex font-display items-center justify-center text-sm">
@@ -50,7 +50,7 @@ export default {
   width: 30px;
   height: 30px;
   text-align: center;
-  padding-top: 5px;
+  padding-top: 7px;
 
   background: black;
   color: white;
