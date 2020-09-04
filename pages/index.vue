@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-grey-lighter">
+  <div class="bg-brand-grey">
     <FeaturedBook></FeaturedBook>
   </div>
   <div>
@@ -27,20 +27,23 @@
   <div>
     <LatestBlog></LatestBlog>
   </div>
-  <div v-if="entries" class="mx-auto font-primary container my-10 md:my-20">
-    <div class="max-w-4xl mx-auto text-center my-10 px-4 md:px-0">
-      <h3 class="text-2xl md:text-4xl font-bold mb-2">{{ entries[0].instafeed[0].instaTitle }}</h3>
-      <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
-    </div>
-    <div class="flex flex-wrap justify-center">
-      <div v-for="image in entries[0].instafeed[0].images.slice(0,4)" :key="image.id" class="w-full sm:w-1/3 h-auto m-5">
-        <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" />
-      </div> 
+  <div v-if="entries" class="bg-brand-grey">
+    <div class="mx-auto font-primary container py-10 md:py-20">
+      <div class="max-w-4xl mx-auto text-center my-10 px-4 md:px-0">
+        <h3 class="text-2xl md:text-4xl font-bold mb-2">{{ entries[0].instafeed[0].instaTitle }}</h3>
+        <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
+      </div>
+      <div class="flex flex-wrap justify-center">
+        <div v-for="image in entries[0].instafeed[0].images.slice(0,4)" :key="image.id" class="w-full sm:w-1/3 h-auto m-5">
+          <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" />
+        </div> 
+      </div>
     </div>
   </div>
+  
   <div class="bg-grey-darker py-5 md:py-10">
     <div class="max-w-4xl mx-auto px-4 md:px-0">
-      <newsletter-general class="relative z-10"></newsletter-general>
+      <newsletter-general :message="heroMessage" class="relative z-10"></newsletter-general>
     </div>
   </div>
 </div>

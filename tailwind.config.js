@@ -10,7 +10,10 @@ module.exports = {
       'primary': ['Raleway','sans-serif']
     },
     colors: {
-      
+      brand: {
+        grey: '#D4D4D4',
+        black: '#545454'
+      },
       black: {
         default: '#000000',
         80: 'rgba(0,0,0,0.8)',
@@ -24,6 +27,9 @@ module.exports = {
         lighter: '#fafafa',
         default: '#ddd',
         darker: '#424242',
+      },
+      red: {
+        default: '#9C0100',
       },
       debug: {
         red: 'red',

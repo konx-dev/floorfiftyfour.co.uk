@@ -43,7 +43,7 @@ export default {
     & > div {
         
         &:nth-child(odd) {
-            background: $grey--lighter;
+            background: $brand-grey;
         }
 
         &:nth-child(even) {

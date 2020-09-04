@@ -1,41 +1,44 @@
 <template>
-  <div class="py-4 container mx-auto">
-    <div class="flex flex-row justify-center items-center py-10">
-      <a
-        href="https://www.reddit.com/r/RJHuntWrites/"
-        target="_blank"
-        rel="nofollow"
-        class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
-      >
-        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
-      </a>
-      <a
-        href="https://twitter.com/RJHUNTWRITES"
-        target="_blank"
-        rel="nofollow"
-        class="icon-circle icon-circle--twitter mx-4 transition-all duration-500 ease-in-out hover:bg-black"
-      >
-        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'twitter']" />
-      </a>
-      <a
-        href="mailto:floorfiftyfour@gmail.com"
-        class="icon-circle icon-circle--email mx-4 transition-all duration-500 ease-in-out hover:bg-black"
-      >
-        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['far', 'envelope']" />
-      </a>
-      <a
-        href="https://www.instagram.com/floorfiftyfourofficial/"
-        target="_blank"
-        rel="nofollow"
-        class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
-      >
-        <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'instagram']" />
-      </a>
-    </div>
-    <div class="flex font-display items-center justify-center text-sm">
-      <div class="">Floor Fifty-Four, {{ new Date().getFullYear() }}</div>
-    </div>
+  <div class="bg-brand-grey">
+    <div class="py-4 container mx-auto">
+        <div class="flex flex-row justify-center items-center py-10">
+          <a
+            href="https://www.reddit.com/r/RJHuntWrites/"
+            target="_blank"
+            rel="nofollow"
+            class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+          >
+            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
+          </a>
+          <a
+            href="https://twitter.com/RJHUNTWRITES"
+            target="_blank"
+            rel="nofollow"
+            class="icon-circle icon-circle--twitter mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+          >
+            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'twitter']" />
+          </a>
+          <a
+            href="mailto:floorfiftyfour@gmail.com"
+            class="icon-circle icon-circle--email mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+          >
+            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['far', 'envelope']" />
+          </a>
+          <a
+            href="https://www.instagram.com/floorfiftyfourofficial/"
+            target="_blank"
+            rel="nofollow"
+            class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+          >
+            <font-awesome-icon class="w-4 pt-2 mx-auto h-auto" :icon="['fab', 'instagram']" />
+          </a>
+        </div>
+        <div class="flex font-display items-center justify-center text-sm">
+          <div class="">Floor Fifty-Four, {{ new Date().getFullYear() }}</div>
+        </div>
+      </div>
   </div>
+  
 </template>
 
 <script>
