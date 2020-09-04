@@ -6,9 +6,9 @@
             href="https://www.reddit.com/r/RJHuntWrites/"
             target="_blank"
             rel="nofollow"
-            class="icon-circle  icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
+            class="icon-circle icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
-            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'reddit-alien']" />
+            <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'reddit-alien']" />
           </a>
           <a
             href="https://twitter.com/RJHUNTWRITES"
@@ -16,13 +16,13 @@
             rel="nofollow"
             class="icon-circle icon-circle--twitter mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
-            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'twitter']" />
+            <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'twitter']" />
           </a>
           <a
             href="mailto:floorfiftyfour@gmail.com"
             class="icon-circle icon-circle--email mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
-            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['far', 'envelope']" />
+            <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['far', 'envelope']" />
           </a>
           <a
             href="https://www.instagram.com/floorfiftyfourofficial/"
@@ -30,7 +30,7 @@
             rel="nofollow"
             class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
-            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'instagram']" />
+            <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'instagram']" />
           </a>
         </div>
         <div class="flex font-display items-center justify-center text-sm">
@@ -54,9 +54,18 @@ export default {
   height: 30px;
   text-align: center;
   padding-top: 7px;
+  position: relative;
 
   background: black;
   color: white;
+
+  .icon {
+    width: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
 
   &--reddit {
     background: #ff5700;

@@ -1,10 +1,10 @@
 <template class="">
     <div>
         <div v-if="!menuOpen" @click="menuToggle()" class="menu-button bg-brand-grey border border-brand-black text-black w-12 h-12 rounded-full text-center fixed cursor-pointer z-30">
-            <font-awesome-icon class="w-5 pt-3 menu-button__bars mx-auto h-auto" :icon="['fas', 'bars']" />
+            <font-awesome-icon class="menu-button__bars mx-auto h-auto" :icon="['fas', 'bars']" />
         </div>
         <div v-else @click="menuToggle()" class="menu-button bg-brand-grey text-black w-12 h-12 rounded-full text-center fixed cursor-pointer z-30">
-            <font-awesome-icon class="w-5 menu-button__close mx-auto h-auto" :icon="['fas', 'times']" />
+            <font-awesome-icon class="menu-button__close mx-auto h-auto" :icon="['fas', 'times']" />
         </div>
         <div class="logo-button hidden lg:block md:fixed cursor-pointer z-30" v-if="globalSets">
             <nuxt-link to="/"><v-img class="w-16 h-16" :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" /></nuxt-link>
@@ -64,8 +64,9 @@ export default {
         transform: translateX(0);
     }
 
-    &__close {
-        padding-top: 10px;
+    &__close, &__bars {
+        width: 18px !important;
+        padding-top: 11px !important;
     }
 }
 
