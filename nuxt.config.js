@@ -39,7 +39,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    'nuxt-purgecss',
+    // 'nuxt-purgecss',
     ['@nuxtjs/google-analytics', {
       id: 'XX-XXXXXXX-X' // UA-140024933-2
     }],
