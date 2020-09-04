@@ -8,6 +8,8 @@ query BooksQuery {
           heading
           subHeading
           description
+          buttonUrl
+          buttonText
           featuredImage {
             title
             filename

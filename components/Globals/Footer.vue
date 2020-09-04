@@ -30,7 +30,7 @@
             rel="nofollow"
             class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
-            <font-awesome-icon class="w-4 pt-2 mx-auto h-auto" :icon="['fab', 'instagram']" />
+            <font-awesome-icon class="w-4 mx-auto h-auto" :icon="['fab', 'instagram']" />
           </a>
         </div>
         <div class="flex font-display items-center justify-center text-sm">
