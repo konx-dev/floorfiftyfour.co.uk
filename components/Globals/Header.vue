@@ -54,9 +54,13 @@ export default {
 
 .menu-button {
 
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
+    // bottom: 20px;
+    // right: 50%;
+    // transform: translateX(50%);
+
+    top: 15px;
+    right: 15px;
+    transform: translateX(0);
 
     @include min-bp($md) {
         top: 25px;
