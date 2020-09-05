@@ -34,7 +34,7 @@ export default {
 
     data() {
         return {
-            articleMessage: "If you're reading this, you're probably already part of the newsletter. It's the newsletter preview, after all. Still, on the off chance you're not - and would like to be - sign up below!"
+            articleMessage: "Get involved. Join the newsletter and get monthly stories, reports and blog posts."
         }
     },
 

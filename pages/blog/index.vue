@@ -35,7 +35,7 @@ export default {
     },
     data() {
         return {
-            exampleMessage: 'example message here'
+            exampleMessage: 'Get involved. Join the newsletter and get monthly stories, reports and blog posts.'
         }
     },
     components: {
