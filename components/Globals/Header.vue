@@ -68,7 +68,12 @@ export default {
         transform: translateX(0);
     }
 
-    &__close, &__bars {
+    &__bars {
+        width: 18px !important;
+        padding-top: 12px !important;
+    }
+
+    &__close {
         width: 18px !important;
         padding-top: 11px !important;
     }
