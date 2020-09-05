@@ -17,7 +17,7 @@
         novalidate
       >
         <div id="mc_embed_signup_scroll" class="flex flex-col md:flex-row items-center">
-          <div class="flex flex-col w-full">
+          <div class="flex flex-col mb-2 md:mb-0 w-full">
             <label class="mb-2 hidden text-center text-base font-bold font-display" for="mce-EMAIL"
               >Email Address</label
             >
@@ -25,7 +25,7 @@
               type="email"
               value=""
               name="EMAIL"
-              class="font-display text-brand-black email p-4 w-full"
+              class="font-display rounded-none text-brand-black email p-4 w-full"
               id="mce-EMAIL"
               placeholder="kevin@floorfiftyfoor.co.uk"
               required
@@ -46,7 +46,7 @@
               value="Subscribe"
               name="subscribe"
               id="mc-embedded-subscribe"
-              class="py-4 px-24 bg-black hover:bg-grey hover:text-black cursor-pointer w-full md:w-auto"
+              class="py-4 rounded-none px-24 bg-black hover:bg-grey hover:text-black cursor-pointer w-full md:w-auto"
             />
           </div>
         </div>
