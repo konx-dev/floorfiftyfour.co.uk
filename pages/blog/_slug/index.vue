@@ -58,9 +58,15 @@ export default {
 <style lang="scss">
 
 .article-view__copy {
-    /deep/ p {
+
+    p {
         margin-bottom: 20px;
         line-height: 1.75;
+    }
+
+    a {
+        color: $red;
+        font-weight: $bolder;
     }
 }
 
