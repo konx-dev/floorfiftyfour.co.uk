@@ -25,7 +25,7 @@
               type="email"
               value=""
               name="EMAIL"
-              class="font-display email p-4 w-full"
+              class="font-display text-brand-black email p-4 w-full"
               id="mce-EMAIL"
               placeholder="kevin@floorfiftyfoor.co.uk"
               required
@@ -88,9 +88,5 @@ export default {
     background: white;
     color: black;
   }
-}
-
-.test {
-  color: red;
 }
 </style>

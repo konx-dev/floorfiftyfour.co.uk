@@ -22,7 +22,7 @@
               type="email"
               value=""
               name="EMAIL"
-              class="font-display email p-4"
+              class="font-display text-brand-black email p-4"
               id="mce-EMAIL"
               placeholder="kevin@floorfiftyfoor.co.uk"
               required
