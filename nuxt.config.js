@@ -41,7 +41,7 @@ export default {
     '@nuxtjs/tailwindcss',
     // 'nuxt-purgecss',
     ['@nuxtjs/google-analytics', {
-      id: 'XX-XXXXXXX-X' // UA-140024933-2
+      id: 'UA-140024933-2' // UA-140024933-2
     }],
     ['nuxt-fontawesome', {
       component: 'font-awesome-icon', //customize component name
