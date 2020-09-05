@@ -29,7 +29,7 @@ module.exports = {
         darker: '#424242',
       },
       red: {
-        default: '#9C0100',
+        default: '#DC143C',
       },
       debug: {
         red: 'red',

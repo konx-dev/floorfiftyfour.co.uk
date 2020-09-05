@@ -54,9 +54,14 @@ export default {
     
     &__copy {
 
-        /deep/ p {
+        p {
             margin-bottom: 20px;
             line-height: 1.75;
+        }
+
+        a {
+            color: $red;
+            font-weight: $bolder;
         }
     }
 }
