@@ -1,7 +1,7 @@
 {
-  "name": "main-site",
-  "version": "1.0.0",
-  "description": "Floor Fifty Four - Nuxt.js build",
+  "name": "floor-fifty-four",
+  "version": "2.0.0",
+  "description": "Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.",
   "author": "Oliver Cox",
   "private": true,
   "scripts": {
