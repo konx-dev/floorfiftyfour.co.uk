@@ -14,7 +14,7 @@
             <div class="relative z-10 text-md md:text-2xl mx-auto w-64 md:w-auto md:max-w-xl">{{ entry.title }}</div>
             <v-img class="absolute top-0 left-0 w-full h-full object-cover" v-if="entry.hero[0].featuredImage" :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" />
         </div>
-        <div class="container mx-auto bg-grey-darker px-4 py-12 md:py-24 sm:mt-12 md:mt-24 ">
+        <div class="container mx-auto bg-grey-darker px-4 sm:mt-12 md:mt-24 ">
             <div class="article-view__copy text-white text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
         <div class="bg-grey-darker py-5 md:py-10">
