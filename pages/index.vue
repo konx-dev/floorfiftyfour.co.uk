@@ -34,8 +34,8 @@
         <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
       </div>
       <div class="flex flex-wrap justify-center">
-        <div v-for="image in entries[0].instafeed[0].images.slice(0,4)" :key="image.id" class="w-full sm:w-1/3 h-auto m-5">
-          <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" />
+        <div v-for="image in entries[0].instafeed[0].images.slice(0,4)" :key="image.id" class="w-full sm:w-1/3 h-auto m-2 lg:m-5">
+          <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" :sizes="imageSizes" />
         </div> 
       </div>
     </div>
@@ -64,6 +64,14 @@ export default {
   data() {
     return {
       heroMessage: 'Sign up for the Floor Fifty-Four Newsletter and receive free e-books, discounts and the chance to be a Beta-Reader!',
+      imageSizes: {
+          320: {
+              w: 400
+          },
+          640: {
+            w: 800
+          }
+      },
     }
   },
 
