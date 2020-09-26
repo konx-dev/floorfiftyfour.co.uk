@@ -8,7 +8,7 @@
                     <div class="card__inner__subheading font-bold text-black text-xs mx-auto w-48 py-2 text-center z-10" v-html="item.hero[0].subHeading"></div>
                     
                     <div class="card__image w-full h-full">
-                        <v-img class="w-full h-full object-cover" v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" />
+                        <v-img v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :sizes="cardSizes" :alt="item.hero[0].featuredImage[0].title" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
                     </div>
             </nuxt-link>
         </div>
@@ -28,6 +28,24 @@ export default {
     },
     data() {
         return {
+            cardSizes: {
+                // iphone 5
+                320: {
+                    tr: 'w-400'
+                },
+                // ipad
+                768: {
+                    tr: 'w-450'
+                },
+                // ipad pro
+                1024: {
+                    tr: 'w-450'
+                },
+                // desktop
+                1280: {
+                    tr: 'w-600'
+                }
+            },
         }
     },
 }
@@ -72,6 +90,7 @@ export default {
     &::before {
             content: '';
             position: absolute;
+            z-index: 5;
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.6);

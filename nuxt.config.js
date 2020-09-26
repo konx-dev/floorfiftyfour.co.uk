@@ -31,7 +31,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/global',
+    '~/plugins/global'
   ],
   /*
   ** Nuxt.js dev-modules

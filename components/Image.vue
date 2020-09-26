@@ -1,8 +1,42 @@
+<!--
+    Responsive Images with Imgkit.io
+    
+    Use like:
+    
+    <v-img src="pathtoimage.jpg" :sizes="imageSizes" />
+    
+    Where imageSizes is similar to: 
+    
+    {
+        imageSizes: {
+          // iphone 5
+          320: {
+            tr: 'w-200'
+          },
+          // ipad
+          768: {
+            tr: 'w-400'
+          },
+          // ipad pro
+          1024: {
+            tr: 'w-400'
+          },
+          // desktop
+          1280: {
+            tr: 'w-400'
+          }
+      },
+    }
+    
+    If the width in the options is not set, the fallback
+    will get the highest breakpoint and use those values.
+-->
+
 <template>
-    <picture>
-        <source v-for="breakpoint in breakpoints" :key="breakpoint" :media="'(min-width: '+ breakpoint +'px)'" v-bind="attributes(breakpoint)" :class="sourceClass">
-        <img v-bind="defaultSrc" :alt="alt" class="block mx-auto max-w-full max-h-full object-cover" :class="buildClasses" />
-    </picture>
+        <picture>
+            <source v-for="breakpoint in breakpoints" :key="breakpoint" :media="'(min-width: '+ breakpoint +'px)'" v-bind="attributes(breakpoint)" :class="sourceClass">
+            <img v-bind="defaultSrc" :alt="alt" class="block mx-auto max-w-full max-h-full object-cover" :class="buildClasses" />
+        </picture>
 </template>
 
 <script>
@@ -21,7 +55,7 @@ export default {
         },
         lazyLoad: {
             type: Boolean,
-            default: false
+            default: true
         },
         imgClass: {
             type: String,
@@ -45,13 +79,6 @@ export default {
         breakpoints() {
             return Object.keys(this.sizes).sort((a, b) => a - b).reverse();  
         },
-        // defaultSrc() {
-        //     let src = 'src';
-
-        //     return {
-        //         [src]: 'https://ik.imagekit.io/2lyxtm1dps/' + this.src + '?q=80&auto=format'
-        //     }
-        // },
         defaultSrc() {
             let src = this.lazyLoad ? 'data-src' : 'src';
             
@@ -75,27 +102,28 @@ export default {
     },
     methods: {
         attributes(breakpoint) {
+            
             let srcset = this.lazyLoad ? 'data-srcset' : 'srcset';
 
             return {
-                [srcset]: 'https://ik.imagekit.io/2lyxtm1dps/' + this.buildSrcSet(this.sizes[breakpoint])
+                [srcset]: this.buildSrcSet(this.sizes[breakpoint])
             }
         },
         buildSrcSet(params) {
             let result = [];
-            
+
             for (var i = 1; i <= this.pixelDensity; i++) {
-                result.push(this.src + '?' + this.getParams(params, i) + ' ' + i + 'x');
+                result.push('https://ik.imagekit.io/2lyxtm1dps/' + this.src + '?' + this.getParams(params, i) + ' ' + i + 'x');
             }
             
             return result.join(',');
         },
         getParams(params = {}, pixelDensity = null) {
             let result = {
-                q: 80,
-                auto: 'format',
+                // q: 80,
+                // auto: 'format',
+                // ...this.options,
                 ...params,
-                ...this.options
             }
             
             if (pixelDensity)

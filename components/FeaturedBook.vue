@@ -1,7 +1,7 @@
 <template>
     <div class="book font-primary container mx-auto max-w-4xl py-10 md:py-20">
         <div v-for="book in entries" :key="book.id">
-            <div v-if="book.featured" class="flex flex-col-reverse md:flex-row items-center justify-between">
+            <div v-if="book.featured" class="flex flex-col-reverse md:flex-row items-center justify-between px-4 lg:px-0">
                 <div class="max-w-md px-4 md:px-0">
                     <!-- <div class="text-base">{{ book.hero[0].heading }}</div> -->
                     <h2 class="text-2xl md:text-4xl font-bold mb-4">{{ book.title }}</h2>
@@ -11,10 +11,10 @@
                     </div>
                 </div>
                 <div v-if="disabled" class="max-w-xs mb-4 md:mb-0">
-                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" />
+                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" />
                 </div>
                 <nuxt-link v-else class="max-w-xs mb-4 md:mb-0" :to="'books/' + book.slug">
-                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" />
+                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" />
                 </nuxt-link>
                 <!-- <nuxt-link :event="disabled ? '' : 'click'" class="max-w-xs mb-4 md:mb-0" :to="'books/' + book.slug">
                     <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" />
@@ -38,7 +38,21 @@ export default {
     },
     data() {
         return {
-            disabled: true
+            disabled: true,
+            imageSizes: {
+                // iphone 5
+                320: {
+                    tr: 'w-200'
+                },
+                // ipad
+                768: {
+                    tr: 'w-250'
+                },
+                // ipad pro
+                1024: {
+                    tr: 'w-320'
+                },
+            },
         }
     },
     components: {
