@@ -1,6 +1,8 @@
-# main-site
+# floorfiftyfour.co.uk
 
-> Floor Fifty Four - Nuxt.js build
+Built with Nuxt.js (Vue) with craftcms backend for client authoring hosted on a digitalocean droplet. The data is being queried via graphql with the front-end hosted with Netlify. Features a newsletter signup, blog, short stories and book pages generated from templates.
+
+Site is currently in production and actively maintained on a retainer, the current version is v2.0 
 
 ## Build Setup
 
@@ -18,5 +20,3 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

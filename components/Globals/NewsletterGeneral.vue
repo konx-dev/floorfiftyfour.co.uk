@@ -1,7 +1,7 @@
 <template>
   <div class="text-white">
     <div v-if="globalSets" class="">
-      <v-img class="w-full h-full object-cover" :src="globalSets[0].newsletterBanner[0].filename" :alt="globalSets[0].newsletterBanner[0].title" />
+      <v-img class="w-full h-full object-cover" :src="globalSets[0].newsletterBanner[0].filename" :alt="globalSets[0].newsletterBanner[0].title" :sizes="bannerSizes" />
     </div>
     <div v-if="message" class="text-center text-base md:text-xl my-5">
         {{ message }}
@@ -62,6 +62,27 @@ import newsletter from '~/apollo/queries/globals'
 
 export default {
   name: "newsletter-general",
+  data() {
+    return {
+      bannerSizes: {
+          // iphone 5
+          320: {
+            tr: 'w-400'
+          },
+          440: {
+            tr: 'w-550'
+          },
+          // ipad
+          768: {
+            tr: 'w-800'
+          },
+          // ipad pro
+          1024: {
+            tr: 'w-900'
+          },
+      },
+    }
+  },
   apollo: {
     globalSets: {
       prefetch: true,

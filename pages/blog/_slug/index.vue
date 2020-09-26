@@ -12,9 +12,9 @@
         <div class="hero relative overflow-hidden bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
             <h1 class="relative z-10 font-bold text-3xl md:text-5xl">{{ entry.hero[0].heading }}</h1>
             <div class="relative z-10 text-md md:text-2xl mx-auto w-64 md:w-auto md:max-w-xl">{{ entry.title }}</div>
-            <v-img class="absolute top-0 left-0 w-full h-full object-cover" v-if="entry.hero[0].featuredImage" :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" />
+            <v-img v-if="entry.hero[0].featuredImage" :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" :sizes="heroSizes" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
         </div>
-        <div class="container mx-auto bg-grey-darker px-4 py-12 md:py-24 sm:mt-12 md:mt-24 ">
+        <div class="container mx-auto bg-grey-darker px-5 mt-6 sm:mt-12 md:mt-20 ">
             <div class="article-view__copy text-white text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
         <div class="bg-grey-darker py-5 md:py-10">
@@ -34,7 +34,25 @@ export default {
 
     data() {
         return {
-            articleMessage: "Get involved. Join the newsletter and get monthly stories, reports and blog posts."
+            articleMessage: "Get involved. Join the newsletter and get monthly stories, reports and blog posts.",
+            heroSizes: {
+                // iphone 5
+                320: {
+                    tr: 'h-640'
+                },
+                // ipad
+                768: {
+                    tr: 'w-1280'
+                },
+                // ipad pro
+                1024: {
+                    tr: 'w-1440'
+                },
+                // desktop
+                1280: {
+                    tr: 'w-1600'
+                }
+            },
         }
     },
 

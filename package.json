@@ -20,7 +20,9 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/pwa": "^3.0.2",
     "graphql": "^15.3.0",
-    "nuxt": "^2.14.4"
+    "nuxt": "^2.14.4",
+    "qs": "^6.9.4",
+    "vanilla-lazyload": "^17.1.2"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",

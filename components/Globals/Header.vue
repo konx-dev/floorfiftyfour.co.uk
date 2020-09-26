@@ -7,7 +7,7 @@
             <font-awesome-icon class="menu-button__close mx-auto h-auto" :icon="['fas', 'times']" />
         </div>
         <div class="logo-button hidden lg:block md:fixed cursor-pointer z-30" v-if="globalSets">
-            <nuxt-link to="/"><v-img class="w-16 h-16" :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" /></nuxt-link>
+            <nuxt-link to="/"><v-img :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" imgClass="w-16 h-16" /></nuxt-link>
         </div>
         
         <div @click="menuToggle()" :class="menuOpen ? 'menu--active' : 'menu'" class="fixed top-0 right-0 left-0 z-20 transition-transform duration-300 ease-in-out"  >
@@ -19,7 +19,7 @@
                     <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/books">Books</nuxt-link>
                 </div>
                 <div class="mt-auto mb-40" v-if="globalSets">
-                    <nuxt-link to="/"><v-img class="w-16 h-16" :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" /></nuxt-link>
+                    <nuxt-link to="/"><v-img :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" imgClass="w-20 h-20" /></nuxt-link>
                 </div>
             </div>
         </div>
