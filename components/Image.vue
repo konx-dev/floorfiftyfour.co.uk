@@ -28,8 +28,6 @@
       },
     }
     
-    If the width in the options is not set, the fallback
-    will get the highest breakpoint and use those values.
 -->
 
 <template>
@@ -122,7 +120,6 @@ export default {
             let result = {
                 // q: 80,
                 // auto: 'format',
-                // ...this.options,
                 ...params,
             }
             
