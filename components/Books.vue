@@ -11,10 +11,10 @@
                     </div>
                 </div>
                 <div v-if="disabled" class="max-w-xs mb-4 md:mb-0">
-                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" />
+                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" imgClass="w-full" />
                 </div>
                 <nuxt-link v-else class="max-w-xs mb-4 md:mb-0" :to="'books/' + book.slug">
-                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" />
+                    <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" :sizes="imageSizes" imgClass="w-full" />
                 </nuxt-link>
                 <!-- <nuxt-link :event="disabled ? '' : 'click'" class="max-w-xs mb-4 md:mb-0 cursor-default" :to="'books/' + book.slug">
                     <v-img class="w-full h-full" v-if="book.hero[0].image[0]" :src="book.hero[0].image[0].filename" :alt="book.hero[0].image[0].title" />
@@ -42,14 +42,10 @@ export default {
             imageSizes: {
                 // iphone 5
                 320: {
-                    tr: 'w-200'
+                    tr: 'w-280'
                 },
                 // ipad
                 768: {
-                    tr: 'w-250'
-                },
-                // ipad pro
-                1024: {
                     tr: 'w-320'
                 },
             },

@@ -2,11 +2,11 @@
 <div>
   <div class="h-auto md:h-full hero overflow-hidden relative py-10 md:py-20">
     <div class="container font-primary mx-auto max-w-4xl">
-      <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-4 md:px-0">
+      <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-5 lg:px-0">
         <div class="w-40 h-40 relative z-10 mb-10 mx-auto">
           <v-img class="w-full h-full object-cover" v-if="entry.hero[0].image[0]" :src="entry.hero[0].image[0].filename" :alt="entry.hero[0].image[0].title" />
         </div>
-        <h1 class="relative z-10 text-2xl md:text-6xl font-bold mb-6" id="signup_anchor">
+        <h1 class="relative z-10 text-2xl md:text-5xl lg:text-6xl font-bold mb-6" id="signup_anchor">
           {{ entry.hero[0].heading }}
         </h1>
         <h2 v-html="entry.hero[0].subHeading" class="relative z-10 text-base md:text-2xl font-bold mb-4"></h2>
@@ -29,13 +29,13 @@
   </div>
   <div v-if="entries" class="bg-brand-grey">
     <div class="mx-auto font-primary container py-10 md:py-20">
-      <div class="max-w-4xl mx-auto text-center my-10 px-4 md:px-0">
+      <div class="max-w-4xl mx-auto text-center my-10 px-5 lg:px-0">
         <h3 class="text-2xl md:text-4xl font-bold mb-2">{{ entries[0].instafeed[0].instaTitle }}</h3>
         <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
       </div>
-      <div class="flex flex-wrap justify-center">
+      <div class="flex flex-wrap justify-center px-5 lg:px-0">
         <div v-for="image in entries[0].instafeed[0].images.slice(0,4)" :key="image.id" class="w-full sm:w-1/3 h-auto m-2 lg:m-5">
-          <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" :sizes="imageSizes" />
+          <v-img class="w-full h-full object-cover" :src="image.filename" :alt="image.title" :sizes="imageSizes" imgClass="w-full" />
         </div> 
       </div>
     </div>
