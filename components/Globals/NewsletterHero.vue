@@ -64,6 +64,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// code scanner test
+
 .button {
   background: transparent;
   border: 1px solid white;
@@ -74,3 +76,4 @@ export default {
   }
 }
 </style>
+
