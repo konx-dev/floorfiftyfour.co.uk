@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "fragments": "node apollo/schemas/build-craft.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

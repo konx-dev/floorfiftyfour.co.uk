@@ -1,0 +1,23 @@
+query aboutQuery {
+  entry(slug: "about") {
+    ... on about_about_Entry {
+      id
+      pageBuilder {
+        ... on pageBuilder_contentSimple_BlockType {
+          id
+          typeHandle
+          contentTitle
+          contentCopy
+        }
+        ... on pageBuilder_asset_BlockType {
+          id
+          typeHandle
+          image {
+            filename
+            title
+          }
+        }
+      }
+    }
+  }
+}
