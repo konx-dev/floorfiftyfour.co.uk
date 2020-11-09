@@ -3,7 +3,7 @@
   <div class="h-auto md:h-full hero overflow-hidden relative">
     <div class="container font-primary mx-auto max-w-4xl">
       <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-5 lg:px-0">
-        <div class="w-32 h-32 relative z-10 my-8 mx-auto">
+        <div class="w-24 h-24 lg:w-32 lg:h-32 relative z-10 my-4 lg:my-8 mx-auto">
           <v-img class="w-full h-full object-cover" v-if="entry.hero[0].image[0]" :src="entry.hero[0].image[0].filename" :alt="entry.hero[0].image[0].title" />
         </div>
         <!-- <h1 class="relative z-10 text-2xl md:text-5xl lg:text-6xl font-bold mb-6" id="signup_anchor">
@@ -15,11 +15,11 @@
       </div>
     </div>
   </div>
+  <div class="bg-grey-darker py-10">
+    <FeaturedStories></FeaturedStories>  
+  </div>
   <div class="bg-brand-grey">
     <FeaturedBook></FeaturedBook>
-  </div>
-  <div>
-    <FeaturedStory></FeaturedStory>  
   </div>
   <div>
     <LatestBlog></LatestBlog>
@@ -49,7 +49,7 @@
 <script>
 import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 import FeaturedBook from "~/components/FeaturedBook.vue";
-import FeaturedStory from "~/components/FeaturedStory.vue";
+import FeaturedStories from "~/components/FeaturedStories.vue";
 import LatestBlog from "~/components/LatestBlog.vue"
 
 // GraphQL Queries
@@ -106,7 +106,7 @@ export default {
   },
   components: {
     FeaturedBook,
-    FeaturedStory,
+    FeaturedStories,
     LatestBlog,
     NewsletterGeneral
   }

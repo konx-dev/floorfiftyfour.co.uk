@@ -40,7 +40,7 @@ export default {
     data() {
         return {
             menuOpen: false,
-            isSticky: false,
+            isSticky: true,
             scrollDirection: false,
         }
     },
@@ -58,9 +58,8 @@ export default {
             return this.menuOpen = !this.menuOpen;
         },
         checkSticky() {
-            var header = document.querySelector('.header');
-            console.log(window.scrollY);
-            this.isSticky = window.scrollY > header.clientHeight + 180;
+            // var header = document.querySelector('.header');
+            // this.isSticky = window.scrollY > header.clientHeight + 180;
         }
     },
     
@@ -79,7 +78,7 @@ export default {
     right: 15px;
     transform: translateX(0);
     transform: translateY(-200%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 
     @include min-bp($md) {
         top: 25px;
@@ -103,7 +102,7 @@ export default {
     top: 25px;
     left: 25px;
     transform: translateY(-200%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
 .menu {
