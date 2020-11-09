@@ -2,6 +2,21 @@ query aboutQuery {
   entry(slug: "about") {
     ... on about_about_Entry {
       id
+      hero {
+        ... on hero_BlockType {
+          heading
+          subHeading
+          description
+          featuredImage {
+            title
+            filename
+          }
+          image {
+            title
+            filename
+          }
+        }
+      }
       pageBuilder {
         ... on pageBuilder_contentSimple_BlockType {
           id

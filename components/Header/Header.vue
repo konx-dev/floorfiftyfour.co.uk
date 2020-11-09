@@ -1,5 +1,5 @@
 <template class="">
-    <div>
+    <div class="header" :class="isSticky ? 'is-visible' : null">
         <div v-if="!menuOpen" @click="menuToggle()" class="menu-button bg-brand-grey border border-brand-black text-black w-12 h-12 rounded-full text-center fixed cursor-pointer z-30">
             <font-awesome-icon class="menu-button__bars mx-auto h-auto" :icon="['fas', 'bars']" />
         </div>
@@ -40,14 +40,30 @@ export default {
     data() {
         return {
             menuOpen: false,
-        }
-    },
-    methods: {
-        menuToggle: function() {
-            return this.menuOpen = !this.menuOpen;
+            isSticky: false,
+            scrollDirection: false,
         }
     },
 
+    mounted: function() {
+        this.checkSticky();
+        window.addEventListener('scroll', this.checkSticky);
+    },
+    destroyed: function() {
+        window.removeEventListener('scroll', this.checkSticky);
+    },
+
+    methods: {
+        menuToggle: function() {
+            return this.menuOpen = !this.menuOpen;
+        },
+        checkSticky() {
+            var header = document.querySelector('.header');
+            console.log(window.scrollY);
+            this.isSticky = window.scrollY > header.clientHeight + 180;
+        }
+    },
+    
 };
 </script>
 
@@ -62,11 +78,14 @@ export default {
     top: 15px;
     right: 15px;
     transform: translateX(0);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
 
     @include min-bp($md) {
         top: 25px;
         right: 25px;
         transform: translateX(0);
+        transform: translateY(-200%);
     }
 
     &__bars {
@@ -83,6 +102,8 @@ export default {
 .logo-button {
     top: 25px;
     left: 25px;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
 }
 
 .menu {
@@ -94,5 +115,17 @@ export default {
     }
 }
 
+.header {
+
+    &.is-visible {
+
+        .menu-button {
+            transform: translateY(0);
+        }
+        .logo-button {
+            transform: translateY(0);
+        }
+    }
+}
 
 </style>

@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import HeaderMain from '~/components/Globals/Header';
+import HeaderMain from '~/components/Header/Header.vue';
 import FooterMain from '~/components/Globals/Footer';
 
 export default {
