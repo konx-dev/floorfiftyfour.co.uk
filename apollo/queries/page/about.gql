@@ -27,6 +27,7 @@ query aboutQuery {
         ... on pageBuilder_asset_BlockType {
           id
           typeHandle
+          imageSize
           image {
             filename
             title
