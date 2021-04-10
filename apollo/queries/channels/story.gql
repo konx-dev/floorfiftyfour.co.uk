@@ -14,6 +14,15 @@ query BlogArticle($slug: [String!]) {
         }
       }
       contentField
+      report {
+        ... on report_item_BlockType {
+          id
+          reportLabel
+          reportEntry {
+            uri
+          }
+        }
+      }
     }
   }
 }
