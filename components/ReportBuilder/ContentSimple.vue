@@ -1,5 +1,5 @@
 <template>
-    <div class="font-typewriter mb-12">
+    <div class="font-typewriter mb-6 md:mb-12">
         <div class="max-w-4xl mx-auto">
             <h3 v-if="block.contentTitle" class="text-xl text-grey-darker md:text-2xl font-bold mb-2">{{ block.contentTitle }}:</h3>
             <div class="text-md text-brand-black md:text-lg redactor__copy" v-html="block.contentCopy"></div>
@@ -56,12 +56,20 @@ export default {
     }
 
     ul, ol {
-        margin: 50px 0 50px 50px;
+        margin: 25px 0 25px 25px;
+
+        @include min-bp($md) {
+            margin: 50px 0 50px 50px;
+        }
 
         li {
             color: $grey--darker;
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             margin: 0 0 10px 0;
+
+            @include min-bp($md) {
+                font-size: 1.25rem;
+            }
 
             &:last-child {
                 margin: 0;

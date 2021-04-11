@@ -54,11 +54,15 @@ export default {
                 content: '';
                 background: white;
                 position: absolute;
-                top: -4px;
+                top: -3px;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
+
+                @include min-bp($md) {
+                    top: -4px;
+                }
             }
         }
     }
