@@ -10,7 +10,7 @@
         </div>
         <div class="py-10">
             <div class="container mx-auto bg-white flex flex-col p-5 md:p-10">
-                <a :href="report.uri" v-for="report in reports" :key="report.id" class="mb-6 border-b border-dashed border-grey flex flex-row justify-between items-center">
+                <a :href="'/' + report.uri" v-for="report in reports" :key="report.id" class="mb-6 border-b border-dashed border-grey flex flex-row justify-between items-center">
                     <span class="text-xl">{{ report.title }}</span>
                     <span class="text-grey-darker">{{ report.dateCreated | dateFormat }}</span>
                 </a>

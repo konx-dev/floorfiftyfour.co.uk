@@ -15,6 +15,7 @@ query report($slug: [String!]) {
                 }
                 ... on pageBuilder_asset_BlockType {
                 id
+                imageSize
                 image {
                     ... on images_Asset {
                         id
