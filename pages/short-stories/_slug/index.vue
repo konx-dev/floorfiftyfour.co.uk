@@ -10,12 +10,11 @@
             <div class="story-view__copy text-white text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
         <div class="container mx-auto">
-            <div class="max-w-3xl mx-auto">
-                <a :href="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
+            <div class="max-w-3xl mx-auto flex flex-col">
+                <a class="font-extrabold text-red text-lg mb-4" :href="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
                     {{ report.reportLabel }}
                 </a>
             </div>
-
         </div>
         <div class="bg-grey-darker py-5 md:py-10">
             <div class="max-w-3xl mx-auto px-4 md:px-0">
