@@ -8,14 +8,14 @@
             </div> -->
             <v-img v-if="item.hero[0].featuredImage[0]" :sizes="heroSizes" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
         </div>
-        <div class="py-10">
+        <!-- <div class="py-10">
             <div class="container mx-auto bg-white flex flex-col p-5 md:p-10">
                 <a :href="'/' + report.uri" v-for="report in reports" :key="report.id" class="mb-6 border-b border-dashed border-grey flex flex-row justify-between items-center">
                     <span class="text-xl">{{ report.title }}</span>
                     <span class="text-grey-darker">{{ report.dateCreated | dateFormat }}</span>
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>

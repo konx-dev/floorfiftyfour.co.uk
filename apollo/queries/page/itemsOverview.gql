@@ -1,0 +1,37 @@
+query MyQuery {
+  entries(section: "itemsOverview") {
+    ... on itemsOverview_itemsOverview_Entry {
+      id
+      hero {
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          featuredImage {
+            filename
+            title
+          }
+        }
+      }
+    }
+  }
+  items: entries(section: "itemsOfInterest") {
+    id
+    title
+    uri
+    ... on itemsOfInterest_itemsOfInterest_Entry {
+      id
+      hero {
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          image {
+            filename
+            title
+          }
+        }
+      }
+    }
+  }
+}

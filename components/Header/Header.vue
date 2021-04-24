@@ -16,6 +16,7 @@
                 <div class="text-white flex flex-col uppercase font-bold mt-40">
                     <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/about">About</nuxt-link>
                     <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/short-stories">Short Stories</nuxt-link>
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/items">Items of Interest</nuxt-link>
                     <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/blog">Blog</nuxt-link>
                     <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/books">Books</nuxt-link>
                 </div>
