@@ -74,6 +74,7 @@ export default {
             border: 1px solid $grey;
             padding: 10px;
             box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.1);
+            filter: grayscale(100%);
 
             @include min-bp($md) {
                 padding: 20px;

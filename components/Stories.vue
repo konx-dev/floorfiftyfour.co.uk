@@ -6,11 +6,12 @@
                         <!-- <div class="text-center" v-html="item.hero[0].description"></div> -->
                     </div>
                     <div class="card__inner__subheading font-bold text-black text-xs mx-auto w-48 py-2 text-center z-10" v-html="item.hero[0].subHeading"></div>
-                    
+
                     <div class="card__image w-full h-full">
                         <v-img v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :sizes="cardSizes" :alt="item.hero[0].featuredImage[0].title" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
                     </div>
             </nuxt-link>
+            
         </div>
 </template>
 <script>

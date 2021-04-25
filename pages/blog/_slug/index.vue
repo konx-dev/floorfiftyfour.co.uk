@@ -17,6 +17,27 @@
         <div class="container mx-auto bg-grey-darker px-5 mt-12 md:mt-20 ">
             <div class="article-view__copy text-white text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
+        <div class="bg-grey" v-for="item in entries" :key="item.id">
+            <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
+                <!-- PREV BLOG POST -->
+                <a :class=" { 'opacity-50 pointer-events-none' : !item.next }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.next ? '/blog/' + item.next.slug : '/'" :key="item.id">
+                    <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
+                        <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
+                    </div>
+                    <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
+                </a>
+                <a href="/blog" class="bg-black rounded lg:rounded-lg p-2">
+                    <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
+                </a>
+                <!-- NEXT BLOG POST -->
+                <a :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.prev ? '/blog/' + item.prev.slug : '/'" :key="item.id">
+                    <span class="hidden md:block text-sm lg:text-base py-3 px-6 font-typewriter" v-if="item.prev">{{ item.prev.title }}</span>
+                    <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
+                        <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
+                    </div>
+                </a>
+            </div>
+        </div>
         <div class="bg-grey-darker py-5 md:py-10">
             <div class="max-w-3xl mx-auto px-4 md:px-0">
                 <newsletter-general :message="articleMessage" class="relative z-10"></newsletter-general>
@@ -29,12 +50,14 @@ import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 
 // GraphQL Queries
 import article from '~/apollo/queries/channels/article'
+import articles from '~/apollo/queries/channels/articles'
 
 export default {
 
     data() {
         return {
             articleMessage: "Get involved. Join the newsletter and get monthly stories, reports and blog posts.",
+            routeID: this.$route.params.slug,
             heroSizes: {
                 // iphone 5
                 320: {
@@ -65,7 +88,11 @@ export default {
                     slug: this.$route.params.slug
                 }
             }
-        }
+        },
+        entries: {
+            prefetch: true,
+            query: articles,
+        },
     },
     components: {
         NewsletterGeneral
@@ -74,6 +101,37 @@ export default {
 </script>
 
 <style lang="scss">
+
+.entry-navigation {
+    
+    max-height: 44px;
+
+    @include min-bp($md) {
+        min-width: 240px;
+    }
+
+    @include min-bp($lg) {
+        min-width: 360px;
+    }
+
+    &__button {
+        &--left {
+            border-radius: 4px;
+
+            @include min-bp($md) {
+                border-radius: 8px 0 0 8px;
+            }
+        }
+
+        &--right {
+            border-radius: 4px;
+
+            @include min-bp($md) {
+                border-radius: 0 8px 8px 0;
+            }
+        }
+    }
+}
 
 .article-view__copy {
 

@@ -1,4 +1,4 @@
-query MyQuery {
+query MyQuery($limit: Int) {
   entries(section: "itemsOverview") {
     ... on itemsOverview_itemsOverview_Entry {
       id
@@ -15,9 +15,10 @@ query MyQuery {
       }
     }
   }
-  items: entries(section: "itemsOfInterest") {
+  items: entries(section: "itemsOfInterest" limit: $limit) {
     id
     title
+    slug
     uri
     ... on itemsOfInterest_itemsOfInterest_Entry {
       id
@@ -33,5 +34,16 @@ query MyQuery {
         }
       }
     }
+    next {
+      id
+      title
+      uri
+    }
+    prev {
+      uri
+      title
+      id
+    }
   }
+  entryCount(section: "itemsOfInterest")
 }

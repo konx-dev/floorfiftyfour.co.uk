@@ -15,5 +15,17 @@ query ArticlesQuery {
         }
       }
     }
+    next {
+      id
+      title
+      uri
+      slug
+    }
+    prev {
+      uri
+      title
+      id
+      slug
+    }
   }
 }
