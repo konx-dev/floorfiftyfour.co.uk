@@ -21,12 +21,13 @@
         <div class="px-4 lg:px-0 bg-black py-5 lg:py-10">
             <div class="reports__links container mx-auto text-white text-xl md:text-3xl font-typewriter" v-html="entry.linkFields[0].blockHeading"></div>
             <div class="reports__links container mx-auto font-typewriter text-base md:text-lg underline text-white" v-for="link in entry.linkFields[0].linkField" :key="link.id">
-                <a :href="link.itemLink">{{ link.linkLabel }}</a>
+                <a v-if="link.itemType != 'entry' " :href="link.itemLink">{{ link.linkLabel }}</a>
+                <a v-else :href="trimEntry(link.itemLink)">{{ link.linkLabel }}</a>
             </div>
         </div>
         <div class="bg-grey" v-for="item in items" :key="item.id">
             <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
-                <a :class="{ 'opacity-50 pointer-events-none' : !item.prev }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.prev ? '/' + item.prev.uri : '/'" :key="item.id">
+                <a :class="{ 'opacity-50 pointer-events-none' : !item.prev }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.prev ? '/' + item.prev.uri : '/'" :key="'prev-' + item.id">
                     <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
                     </div>
@@ -35,7 +36,7 @@
                 <a href="/items" class="bg-black rounded lg:rounded-lg p-2">
                     <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
                 </a>
-                <a :class="!item.next ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.next ? '/' + item.next.uri : '/'" :key="item.id">
+                <a :class="!item.next ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.next ? '/' + item.next.uri : '/'" :key="'next-' + item.id">
                     <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
                     <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
@@ -76,6 +77,12 @@ export default {
         items: {
             prefetch: true,
             query: itemsOverview,
+        }
+    },
+    methods: {
+        trimEntry(val) {
+            var pathname = new URL(val).pathname;
+            return pathname;
         }
     },
     components: {
