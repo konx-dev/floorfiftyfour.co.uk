@@ -1,0 +1,31 @@
+query report($slug: [String!]) {
+    entry (section: "reports", slug: $slug) {
+        id
+        ... on reports_reports_Entry {
+            id
+            title
+            heading
+            subheading
+            pageBuilder {
+                ... on pageBuilder_contentSimple_BlockType {
+                    id
+                    contentTitle
+                    contentCopy
+                    typeHandle
+                }
+                ... on pageBuilder_asset_BlockType {
+                id
+                imageSize
+                image {
+                    ... on images_Asset {
+                        id
+                        filename
+                        title
+                    }
+                }
+                typeHandle
+                }
+            }
+        }
+    }
+}

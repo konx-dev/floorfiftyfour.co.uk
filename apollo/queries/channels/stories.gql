@@ -15,5 +15,15 @@ query StoriesQuery {
         }
       }
     }
+    next {
+      id
+      title
+      uri
+    }
+    prev {
+      uri
+      title
+      id
+    }
   }
 }

@@ -14,7 +14,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&display=swap' },
     ]
   },
   /*
@@ -47,7 +49,7 @@ export default {
       component: 'font-awesome-icon', //customize component name
       imports: [{
             set: '@fortawesome/free-solid-svg-icons',
-            icons: ['faLink','faBars','faTimes']
+            icons: ['faLink','faBars','faTimes','faAsterisk','faLongArrowAltRight','faLongArrowAltLeft','faTh']
           },
           {
             set: '@fortawesome/free-brands-svg-icons',
@@ -55,7 +57,7 @@ export default {
           },
           {
             set: '@fortawesome/free-regular-svg-icons',
-            icons: ['faEnvelope', 'faCopyright']
+            icons: ['faEnvelope', 'faCopyright','faFolderOpen']
           },
       ]
    }]

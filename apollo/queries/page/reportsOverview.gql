@@ -1,0 +1,24 @@
+query MyQuery {
+  entries(section: "reportsOverview") {
+    ... on reportsOverview_reportsOverview_Entry {
+      id
+      hero {
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          featuredImage {
+            filename
+            title
+          }
+        }
+      }
+    }
+  }
+  reports: entries(section: "reports") {
+    id
+    title
+    uri
+    dateCreated
+  }
+}

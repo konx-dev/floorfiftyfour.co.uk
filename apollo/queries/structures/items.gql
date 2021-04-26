@@ -1,0 +1,50 @@
+query item($slug: [String!]) {
+    entry (section: "itemsOfInterest", slug: $slug) {
+        id
+        title
+        ... on itemsOfInterest_itemsOfInterest_Entry {
+            id
+            hero {
+                ... on hero_BlockType {
+                    id
+                    heading
+                    subHeading
+                    image {
+                        title
+                        filename
+                    }
+                }
+            }
+            contentField
+            assets {
+                ... on assets_BlockType {
+                    id
+                    blockHeading
+                    assets {
+                        ... on assets_asset_BlockType {
+                        id
+                        assetItem {
+                            filename
+                            title
+                        }
+                        assetDescription
+                        }
+                    }
+                }
+            }
+            linkFields {
+                ... on linkFields_BlockType {
+                    id
+                    blockHeading
+                    linkField {
+                        ... on linkField_linkItem_BlockType {
+                            id
+                            linkLabel
+                            itemLink
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

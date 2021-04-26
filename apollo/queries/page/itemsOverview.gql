@@ -1,0 +1,49 @@
+query MyQuery($limit: Int) {
+  entries(section: "itemsOverview") {
+    ... on itemsOverview_itemsOverview_Entry {
+      id
+      hero {
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          featuredImage {
+            filename
+            title
+          }
+        }
+      }
+    }
+  }
+  items: entries(section: "itemsOfInterest" limit: $limit) {
+    id
+    title
+    slug
+    uri
+    ... on itemsOfInterest_itemsOfInterest_Entry {
+      id
+      hero {
+        ... on hero_BlockType {
+          id
+          heading
+          subHeading
+          image {
+            filename
+            title
+          }
+        }
+      }
+    }
+    next {
+      id
+      title
+      uri
+    }
+    prev {
+      uri
+      title
+      id
+    }
+  }
+  entryCount(section: "itemsOfInterest")
+}
