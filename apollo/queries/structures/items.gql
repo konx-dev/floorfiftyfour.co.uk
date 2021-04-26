@@ -40,6 +40,7 @@ query item($slug: [String!]) {
                         ... on linkField_linkItem_BlockType {
                             id
                             linkLabel
+                            itemType
                             itemLink
                         }
                     }
