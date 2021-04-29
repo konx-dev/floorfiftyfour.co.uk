@@ -20,6 +20,20 @@ import Asset from '~/components/PageBuilder/Asset.vue';
 import about from '~/apollo/queries/page/about'
 
 export default {
+  head() {
+    return {
+      title: 'about page title',
+      titleTemplate: '%s | Floor Fifty Four',
+      link: [
+        { rel: 'canonical', href: 'https://www.floorfiftyfour.co.uk/about' }
+      ],
+      meta: [
+        { hid: 'description', name: 'description', content: 'description here' },
+        // { hid: 'keywords', name: 'keywords', content: 'keywords here'}, discontinued usage by search engines
+        // { hid: 'robots', name: 'robots', content: 'noindex,nofollow'},
+      ],
+    }
+  },
   apollo: {
     entry: {
       prefetch: true,
