@@ -1,6 +1,5 @@
 <template>
     <div v-if="entry">
-        
         <div class="hero relative overflow-hidden bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
             <h1 class="relative z-10 font-bold text-3xl md:text-6xl">{{ entry.hero[0].heading }}</h1>
             <div class="relative z-10 text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="entry.hero[0].subHeading"></div>
@@ -20,26 +19,6 @@ import Asset from '~/components/PageBuilder/Asset.vue';
 import about from '~/apollo/queries/page/about'
 
 export default {
-  head() {
-    return {
-      title: 'about page title',
-      titleTemplate: '%s | Floor Fifty Four',
-      link: [
-        { rel: 'canonical', href: 'https://www.floorfiftyfour.co.uk/about' }
-      ],
-      meta: [
-        { hid: 'description', name: 'description', content: 'description here' },
-        // { hid: 'keywords', name: 'keywords', content: 'keywords here'}, discontinued usage by search engines
-        // { hid: 'robots', name: 'robots', content: 'noindex,nofollow'},
-      ],
-    }
-  },
-  apollo: {
-    entry: {
-      prefetch: true,
-      query: about
-    }
-  },
   data() {
     return {
       heroSizes: {
@@ -60,6 +39,26 @@ export default {
             tr: 'w-1600'
           }
       },
+    }
+  },
+  head() {
+    return {
+      title: 'hmmm',
+      titleTemplate: 'there',
+      link: [
+        { rel: 'canonical', href: 'https://www.floorfiftyfour.co.uk/about' }
+      ],
+      meta: [
+        { hid: 'description', name: 'description', content: 'description here' },
+        { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'}
+        // { hid: 'robots', name: 'robots', content: 'noindex,nofollow'},
+      ],
+    }
+  },
+  apollo: {
+    entry: {
+      prefetch: true,
+      query: about
     }
   },
   components: {
