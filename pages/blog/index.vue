@@ -5,7 +5,6 @@
             <div class="relative z-10 text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="item.hero[0].subHeading"></div>
             <v-img v-if="item.hero[0].featuredImage[0]" :src="item.hero[0].featuredImage[0].filename" :alt="item.hero[0].featuredImage[0].title" :sizes="heroSizes" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
         </div>
-        
         <div class="bg-grey-darker px-4 py-10 md:py-20">
             <articles></articles>
         </div>
@@ -26,14 +25,30 @@ import blogOverview from '~/apollo/queries/page/blogOverview'
 
 export default {
     apollo: {
+        $loadingKey: 'loading',
         entries: {
             prefetch: true,
-            query: blogOverview
+            query: blogOverview,
+            result({ data }) {
+                this.seoTitle = data.entries[0].seoTitle;
+                this.seoCanonical = data.entries[0].seoCanonical;
+                this.seoMetaDescription = data.entries[0].seoMetaDescription;
+                this.seoMetaKeywords = data.entries[0].seoMetaKeywords;
+                this.seoRobots = data.entries[0].seoRobots;
+                this.seo = data.entries[0];
+            }
         }
     },
     data() {
         return {
             exampleMessage: 'Get involved. Join the newsletter and get monthly stories, reports and blog posts.',
+            loading: 0,
+            seo: null,
+            seoTitle: null,
+            seoCanonical: null,
+            seoMetaDescription: null,
+            seoMetaKeywords: null,
+            seoRobots: null,
             heroSizes: {
                 // iphone 5
                 320: {
@@ -52,6 +67,19 @@ export default {
                     tr: 'w-1600'
                 }
             },
+        }
+    },
+    head() {
+        return {
+            title: this.seoTitle,
+            link: [
+                { rel: 'canonical', href: this.seoCanonical }
+            ],
+            meta: [
+                { hid: 'description', name: 'description', content: this.seoMetaDescription },
+                { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
+                { hid: 'robots', name: 'robots', content: this.seoRobots }
+            ],
         }
     },
     components: {

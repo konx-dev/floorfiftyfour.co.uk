@@ -3,10 +3,10 @@ query aboutQuery {
     ... on about_about_Entry {
       id
       seoTitle
-      seoTitleTemplate
+      seoCanonical
       seoMetaDescription
       seoMetaKeywords
-      robots
+      seoRobots(label: true)
       hero {
         ... on hero_BlockType {
           heading

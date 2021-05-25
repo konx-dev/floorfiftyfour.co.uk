@@ -1,6 +1,11 @@
 query BlogOverviewQuery {
   entries(section: "blogOverview") {
     ... on blogOverview_blogOverview_Entry {
+      seoTitle
+      seoCanonical
+      seoMetaDescription
+      seoMetaKeywords
+      seoRobots(label: true)
       hero {
         ... on hero_BlockType {
           heading

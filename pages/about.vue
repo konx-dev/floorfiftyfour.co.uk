@@ -19,8 +19,28 @@ import Asset from '~/components/PageBuilder/Asset.vue';
 import about from '~/apollo/queries/page/about'
 
 export default {
+  apollo: {
+    $loadingKey: 'loading',
+    entry: {
+      prefetch: true,
+      query: about,
+      result({ data }) {
+        this.seoTitle = data.entry.seoTitle;
+        this.seoCanonical = data.entry.seoCanonical;
+        this.seoMetaDescription = data.entry.seoMetaDescription;
+        this.seoMetaKeywords = data.entry.seoMetaKeywords;
+        this.seoRobots = data.entry.seoRobots;
+      }
+    }
+  },
   data() {
     return {
+      loading: 0,
+      seoTitle: null,
+      seoCanonical: null,
+      seoMetaDescription: null,
+      seoMetaKeywords: null,
+      seoRobots: null,
       heroSizes: {
           // iphone 5
           320: {
@@ -43,22 +63,15 @@ export default {
   },
   head() {
     return {
-      title: 'hmmm',
-      titleTemplate: 'there',
+      title: this.seoTitle,
       link: [
-        { rel: 'canonical', href: 'https://www.floorfiftyfour.co.uk/about' }
+        { rel: 'canonical', href: this.seoCanonical }
       ],
       meta: [
-        { hid: 'description', name: 'description', content: 'description here' },
-        { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'}
-        // { hid: 'robots', name: 'robots', content: 'noindex,nofollow'},
+        { hid: 'description', name: 'description', content: this.seoMetaDescription },
+        { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
+        { hid: 'robots', name: 'robots', content: this.seoRobots }
       ],
-    }
-  },
-  apollo: {
-    entry: {
-      prefetch: true,
-      query: about
     }
   },
   components: {
