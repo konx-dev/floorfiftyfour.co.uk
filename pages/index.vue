@@ -60,6 +60,10 @@ export default {
   data() {
     return {
       heroMessage: 'Sign up for the Floor Fifty-Four Newsletter and receive free e-books, discounts and the chance to be a Beta-Reader!',
+      seoTitle: null,
+      seoMetaDescription: null,
+      seoMetaKeywords: null,
+      seoRobots: null,
       imageSizes: {
           // iphone 5
           320: {
@@ -101,8 +105,27 @@ export default {
   apollo: {
     entries: {
       prefetch: true,
-      query: home
+      query: home,
+      result({ data }) {
+          this.seoTitle = data.entries[0].seoTitle;
+          this.seoMetaDescription = data.entries[0].seoMetaDescription;
+          this.seoMetaKeywords = data.entries[0].seoMetaKeywords;
+          this.seoRobots = data.entries[0].seoRobots;
+      }
     }
+  },
+  head() {
+      return {
+          title: this.seoTitle,
+          link: [
+              // { rel: 'canonical', href: '' }
+          ],
+          meta: [
+              { hid: 'description', name: 'description', content: this.seoMetaDescription },
+              { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
+              { hid: 'robots', name: 'robots', content: this.seoRobots }
+          ],
+      }
   },
   components: {
     FeaturedBook,

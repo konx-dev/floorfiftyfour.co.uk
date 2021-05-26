@@ -1,6 +1,13 @@
 query book($slug: [String!]) {
-    entry (section: "books", slug: $slug) {
-        id,
-        title
+  entry(section: "books", slug: $slug) {
+    id
+    title
+    ... on books_books_Entry {
+      id
+      seoTitle
+      seoMetaDescription
+      seoMetaKeywords
+      seoRobots(label: true)
     }
+  }
 }

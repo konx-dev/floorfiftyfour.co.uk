@@ -3,7 +3,6 @@ query aboutQuery {
     ... on about_about_Entry {
       id
       seoTitle
-      seoCanonical
       seoMetaDescription
       seoMetaKeywords
       seoRobots(label: true)

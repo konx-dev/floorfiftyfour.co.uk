@@ -26,7 +26,6 @@ export default {
       query: about,
       result({ data }) {
         this.seoTitle = data.entry.seoTitle;
-        this.seoCanonical = data.entry.seoCanonical;
         this.seoMetaDescription = data.entry.seoMetaDescription;
         this.seoMetaKeywords = data.entry.seoMetaKeywords;
         this.seoRobots = data.entry.seoRobots;
@@ -37,7 +36,6 @@ export default {
     return {
       loading: 0,
       seoTitle: null,
-      seoCanonical: null,
       seoMetaDescription: null,
       seoMetaKeywords: null,
       seoRobots: null,
@@ -65,7 +63,7 @@ export default {
     return {
       title: this.seoTitle,
       link: [
-        { rel: 'canonical', href: this.seoCanonical }
+        // { rel: 'canonical', href: '' }
       ],
       meta: [
         { hid: 'description', name: 'description', content: this.seoMetaDescription },

@@ -11,6 +11,7 @@
         <div class="">
             <Books></Books>
         </div>
+        {{ seo }}
     </div>
         
 </template>
@@ -26,10 +27,35 @@ export default {
         entries: {
             prefetch: true,
             query: booksOverview,
-        }
+            result({ data }) {
+                this.seoTitle = data.entries[0].seoTitle;
+                this.seoMetaDescription = data.entries[0].seoMetaDescription;
+                this.seoMetaKeywords = data.entries[0].seoMetaKeywords;
+                this.seoRobots = data.entries[0].seoRobots;
+            }
+        },
+        
     },
     data() {
         return {
+            seoTitle: null,
+            seoMetaDescription: null,
+            seoMetaKeywords: null,
+            seoRobots: null,
+            seo: null,
+        }
+    },
+    head() {
+        return {
+            title: this.seoTitle,
+            link: [
+                // { rel: 'canonical', href: '' }
+            ],
+            meta: [
+                { hid: 'description', name: 'description', content: this.seoMetaDescription },
+                { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
+                { hid: 'robots', name: 'robots', content: this.seoRobots }
+            ],
         }
     },
     components: {

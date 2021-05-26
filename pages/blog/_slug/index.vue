@@ -78,7 +78,6 @@ export default {
             },
         }
     },
-
     apollo: {
         entry: {
             prefetch: true,
@@ -87,12 +86,31 @@ export default {
                 return {
                     slug: this.$route.params.slug
                 }
+            },
+            result({ data }) {
+                this.seoTitle = data.entry.seoTitle;
+                this.seoMetaDescription = data.entry.seoMetaDescription;
+                this.seoMetaKeywords = data.entry.seoMetaKeywords;
+                this.seoRobots = data.entry.seoRobots;
             }
         },
         entries: {
             prefetch: true,
             query: articles,
         },
+    },
+    head() {
+        return {
+            title: this.seoTitle,
+            link: [
+                // { rel: 'canonical', href: '' }
+            ],
+            meta: [
+                { hid: 'description', name: 'description', content: this.seoMetaDescription },
+                { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
+                { hid: 'robots', name: 'robots', content: this.seoRobots }
+            ],
+        }
     },
     components: {
         NewsletterGeneral

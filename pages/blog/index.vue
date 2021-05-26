@@ -31,11 +31,9 @@ export default {
             query: blogOverview,
             result({ data }) {
                 this.seoTitle = data.entries[0].seoTitle;
-                this.seoCanonical = data.entries[0].seoCanonical;
                 this.seoMetaDescription = data.entries[0].seoMetaDescription;
                 this.seoMetaKeywords = data.entries[0].seoMetaKeywords;
                 this.seoRobots = data.entries[0].seoRobots;
-                this.seo = data.entries[0];
             }
         }
     },
@@ -43,9 +41,7 @@ export default {
         return {
             exampleMessage: 'Get involved. Join the newsletter and get monthly stories, reports and blog posts.',
             loading: 0,
-            seo: null,
             seoTitle: null,
-            seoCanonical: null,
             seoMetaDescription: null,
             seoMetaKeywords: null,
             seoRobots: null,
@@ -73,7 +69,7 @@ export default {
         return {
             title: this.seoTitle,
             link: [
-                { rel: 'canonical', href: this.seoCanonical }
+                // { rel: 'canonical', href: '' }
             ],
             meta: [
                 { hid: 'description', name: 'description', content: this.seoMetaDescription },
