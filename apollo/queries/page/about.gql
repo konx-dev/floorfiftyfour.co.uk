@@ -4,7 +4,7 @@ query aboutQuery {
       id
       seoTitle
       seoMetaDescription
-      seoMetaKeywords
+      seoCanonical
       seoRobots(label: true)
       hero {
         ... on hero_BlockType {

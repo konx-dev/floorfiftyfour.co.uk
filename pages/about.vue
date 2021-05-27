@@ -27,7 +27,7 @@ export default {
       result({ data }) {
         this.seoTitle = data.entry.seoTitle;
         this.seoMetaDescription = data.entry.seoMetaDescription;
-        this.seoMetaKeywords = data.entry.seoMetaKeywords;
+        this.seoCanonical = data.entry.seoCanonical;
         this.seoRobots = data.entry.seoRobots;
       }
     }
@@ -37,7 +37,7 @@ export default {
       loading: 0,
       seoTitle: null,
       seoMetaDescription: null,
-      seoMetaKeywords: null,
+      seoCanonical: null,
       seoRobots: null,
       heroSizes: {
           // iphone 5
@@ -63,12 +63,15 @@ export default {
     return {
       title: this.seoTitle,
       link: [
-        // { rel: 'canonical', href: '' }
+        { rel: 'canonical', href: this.seoCanonical }
       ],
       meta: [
         { hid: 'description', name: 'description', content: this.seoMetaDescription },
-        { hid: 'keywords', name: 'keywords', content: this.seoMetaKeywords },
-        { hid: 'robots', name: 'robots', content: this.seoRobots }
+        { hid: 'robots', name: 'robots', content: this.seoRobots },
+
+        // OpenGraph
+        { property: 'og:title', content: this.seoTitle, vmid: 'og:title'}
+
       ],
     }
   },

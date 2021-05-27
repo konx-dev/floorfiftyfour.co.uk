@@ -10,7 +10,10 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.' },
-      { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'}
+      // { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'},
+
+      // Open Graph
+      { property: 'og:title', content: 'Floor Fifty-Four | Paranormal & Urban fantasy stories', vmidL: 'og:title'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' },
