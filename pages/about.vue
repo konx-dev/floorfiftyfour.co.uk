@@ -69,9 +69,9 @@ export default {
         { hid: 'description', name: 'description', content: this.seoMetaDescription },
         { hid: 'robots', name: 'robots', content: this.seoRobots },
 
-        // OpenGraph
-        { property: 'og:title', content: this.seoTitle, vmid: 'og:title'}
-
+        // OpenGraph tags
+        { hid: 'og:title', property: 'og:title', content: this.seoTitle, vmid: 'og:title' },
+        { hid: 'og:description', property: 'og:description', content: this.seoMetaDescription, vmid: 'og:description' },
       ],
     }
   },
