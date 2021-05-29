@@ -30,7 +30,7 @@ module.exports = {
         darker: '#424242',
       },
       red: {
-        default: '#DC143C',
+        default: '#c01134',
       },
       debug: {
         red: 'red',

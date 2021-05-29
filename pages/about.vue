@@ -2,7 +2,7 @@
     <div v-if="entry">
         <div class="hero relative overflow-hidden bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
             <h1 class="relative z-10 font-bold text-3xl md:text-6xl">{{ entry.hero[0].heading }}</h1>
-            <div class="relative z-10 text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="entry.hero[0].subHeading"></div>
+            <h2 class="relative z-10 text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="entry.hero[0].subHeading"></h2>
             <v-img v-if="entry.hero[0].featuredImage" :sizes="heroSizes" :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
         </div>
         <div class="py-10 px-4 md:px-8 lg:px-0 bg-grey">
