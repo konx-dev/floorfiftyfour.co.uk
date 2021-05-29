@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Floor Fifty-Four | Paranormal & Urban fantasy stories' || process.env.npm_package_name,
+    title: 'Floor Fifty-Four | Paranormal & Urban fantasy stories',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -78,9 +78,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
@@ -96,12 +93,6 @@ export default {
       //   httpEndpoint: process.env.BACKEND_URL || "https://dev.floorfiftyfour.konx.dev/api"
       // }
     }
-  },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
   /*
   ** Build configuration
