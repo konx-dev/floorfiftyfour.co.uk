@@ -3,6 +3,11 @@ query aboutQuery {
     ... on about_about_Entry {
       id
       seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
       seoMetaDescription
       seoCanonical
       seoRobots(label: true)

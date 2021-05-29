@@ -8,6 +8,7 @@
         <div class="py-10 px-4 md:px-8 lg:px-0 bg-grey">
             <component v-for="(block,index) in entry.pageBuilder" :key="index" :is="block.typeHandle" :block="block" :class="block.typeHandle" />
         </div>
+        <div>{{ seo }}</div>
     </div>
 </template>
 <script>
@@ -29,6 +30,8 @@ export default {
         this.seoMetaDescription = data.entry.seoMetaDescription;
         this.seoCanonical = data.entry.seoCanonical;
         this.seoRobots = data.entry.seoRobots;
+        this.seoType = data.entry.seoContentType;
+        this.seoImage = data.entry.seoImage[0].filename;
       }
     }
   },
@@ -39,6 +42,9 @@ export default {
       seoMetaDescription: null,
       seoCanonical: null,
       seoRobots: null,
+      seoImage: null,
+      seoType: null,
+      seo: null,
       heroSizes: {
           // iphone 5
           320: {
@@ -70,8 +76,17 @@ export default {
         { hid: 'robots', name: 'robots', content: this.seoRobots },
 
         // OpenGraph tags
+        { hid: 'og:type', property: 'og:type', content: this.seoType, vmid: 'og:type' },
         { hid: 'og:title', property: 'og:title', content: this.seoTitle, vmid: 'og:title' },
         { hid: 'og:description', property: 'og:description', content: this.seoMetaDescription, vmid: 'og:description' },
+        { hid: 'og:image', property: 'og:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'og:image' },
+        { hid: 'og:url', property: 'og:url', content: this.seoCanonical, vmid: 'og:url' },
+
+        // Twitter card
+        { hid: 'twitter:title', property: 'twitter:title', content: this.seoTitle, vmid: 'twitter:title' },
+        { hid: 'twitter:description', property: 'twitter:description', content: this.seoMetaDescription, vmid: 'twitter:description' },
+        { hid: 'twitter:image', property: 'twitter:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'twitter:image' },
+        
       ],
     }
   },

@@ -10,15 +10,19 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.' },
-      // { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'},
 
-      // Open Graph
+      // OpenGraph tags
+      { hid: 'og:type', property: 'og:type', content: 'website', vmid: 'og:type' },
       { hid: 'og:title', property: 'og:title', content: 'Floor Fifty-Four | Paranormal & Urban fantasy stories', vmid: 'og:title' },
-      { hid: 'og:type', property: 'og:type', content: 'website', vmid: 'og:type' }, // options - website, article, blog, book
       { hid: 'og:description', property: 'og:description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.', vmid: 'og:description' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Floor Fifty-Four', vmid: 'og:site_name' }
-      // to add - og:image (1.9 / 1 ratio)
+      { hid: 'og:url', property: 'og:url', content: 'https://www.floorfiftyfour.co.uk/', vmid: 'og:url' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Floor Fifty-Four', vmid: 'og:site_name'},
 
+      // Twitter card
+      { hid: 'twitter:title', property: 'twitter:title', content: 'Floor Fifty-Four | Paranormal & Urban fantasy stories', vmid: 'twitter:title' },
+      { hid: 'twitter:description', property: 'twitter:description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.', vmid: 'twitter:description' },
+      { hid: 'twitter:site', property: 'twitter:site', content: 'Floor Fifty-Four', vmid: 'twitter:site'},
+      { hid: 'twitter:creator', property: 'twitter:creator', content: 'https://twitter.com/RJHUNTWRITES', vmid: 'twitter:creator'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' },
