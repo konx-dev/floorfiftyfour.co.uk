@@ -2,6 +2,15 @@ query report($slug: [String!]) {
     entry (section: "reports", slug: $slug) {
         id
         ... on reports_reports_Entry {
+            seoTitle
+            seoContentType
+            seoImage {
+                filename
+                title
+            }
+            seoMetaDescription
+            seoCanonical
+            seoRobots(label: true)
             id
             title
             heading

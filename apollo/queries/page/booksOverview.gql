@@ -2,8 +2,13 @@ query BookOverviewQuery {
   entries(section: "booksOverview") {
     ... on booksOverview_booksOverview_Entry {
       seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
       seoMetaDescription
-      seoMetaKeywords
+      seoCanonical
       seoRobots(label: true)
       hero {
         ... on hero_BlockType {

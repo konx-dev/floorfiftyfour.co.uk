@@ -2,8 +2,13 @@ query BlogOverviewQuery {
   entries(section: "blogOverview") {
     ... on blogOverview_blogOverview_Entry {
       seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
       seoMetaDescription
-      seoMetaKeywords
+      seoCanonical
       seoRobots(label: true)
       hero {
         ... on hero_BlockType {

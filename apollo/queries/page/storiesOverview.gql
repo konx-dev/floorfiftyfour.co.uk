@@ -2,6 +2,15 @@ query MyQuery {
   entries(section: "shortStoriesOverview") {
     ... on shortStoriesOverview_shortStoriesOverview_Entry {
       id
+      seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
+      seoMetaDescription
+      seoCanonical
+      seoRobots(label: true)
       hero {
         ... on hero_BlockType {
           id

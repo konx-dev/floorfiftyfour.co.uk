@@ -8,7 +8,6 @@
         <div class="py-10 px-4 md:px-8 lg:px-0 bg-grey">
             <component v-for="(block,index) in entry.pageBuilder" :key="index" :is="block.typeHandle" :block="block" :class="block.typeHandle" />
         </div>
-        <div>{{ seo }}</div>
     </div>
 </template>
 <script>
@@ -44,7 +43,6 @@ export default {
       seoRobots: null,
       seoImage: null,
       seoType: null,
-      seo: null,
       heroSizes: {
           // iphone 5
           320: {

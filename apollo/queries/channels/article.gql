@@ -15,8 +15,13 @@ query BlogArticle($slug: [String!]) {
       }
       contentField
       seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
       seoMetaDescription
-      seoMetaKeywords
+      seoCanonical
       seoRobots(label: true)
     }
   }
