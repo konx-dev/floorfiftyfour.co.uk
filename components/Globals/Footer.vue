@@ -37,7 +37,7 @@
             <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'instagram']" />
           </a>
         </div>
-        <div class="flex font-display items-center justify-center text-sm">
+        <div class="flex font-primary items-center justify-center text-sm">
           <div class="">Floor Fifty-Four, {{ new Date().getFullYear() }}</div>
         </div>
       </div>

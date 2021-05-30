@@ -2,16 +2,16 @@
 
     <div v-if="entry" class="h-full bg-grey-darker">
         <div class="hero relative overflow-hidden bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
-            <h1 class="relative z-10 font-bold text-3xl md:text-5xl">{{ entry.hero[0].heading }}</h1>
+            <h1 class="relative z-10 font-display text-3xl md:text-5xl">{{ entry.hero[0].heading }}</h1>
             <div class="relative z-10 text-md md:text-3xl mx-auto w-64 md:w-auto md:max-w-xl" v-html="entry.hero[0].subHeading"></div>
             <v-img class="absolute top-0 left-0 w-full h-full object-cover" v-if="entry.hero[0].featuredImage[0]" :src="entry.hero[0].featuredImage[0].filename" :alt="entry.hero[0].featuredImage[0].title" :sizes="heroSizes" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />
         </div>
         <div class="container mx-auto bg-grey-darker px-4 mt-12 md:mt-24 ">
             <div class="story-view__copy text-white text-md md:text-lg max-w-3xl mx-auto" v-html="entry.contentField"></div>
         </div>
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto my-10 px-4">
             <div class="max-w-3xl mx-auto flex flex-col">
-                <a class="font-extrabold text-red text-md md:text-lg mb-4" :href="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
+                <a class="font-display text-red text-base md:text-xl mb-2" :href="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
                     {{ report.reportLabel }}
                 </a>
             </div>
@@ -186,11 +186,12 @@ export default {
         p {
             margin-bottom: 20px;
             line-height: 1.75;
+            font-family: $primary;
         }
 
         a {
             color: $red;
-            font-weight: $bolder;
+            font-family: $display;
         }
     }
 }

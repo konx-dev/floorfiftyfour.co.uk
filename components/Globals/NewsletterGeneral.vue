@@ -3,7 +3,7 @@
     <div v-if="globalSets" class="">
       <v-img class="w-full h-full object-cover" :src="globalSets[0].newsletterBanner[0].filename" :alt="globalSets[0].newsletterBanner[0].title" :sizes="bannerSizes" imgClass="w-full" />
     </div>
-    <div v-if="message" class="text-center text-base md:text-xl my-5">
+    <div v-if="message" class="text-center font-primary text-base md:text-xl my-5">
         {{ message }}
     </div>
     <div id="mc_embed_signup" class="mt-5">
@@ -25,7 +25,7 @@
               type="email"
               value=""
               name="EMAIL"
-              class="font-display rounded-none text-brand-black email p-4 w-full"
+              class="font-primary rounded-none text-brand-black email p-4 w-full"
               id="mce-EMAIL"
               placeholder="kevin@floorfiftyfoor.co.uk"
               required

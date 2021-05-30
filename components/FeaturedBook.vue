@@ -4,7 +4,7 @@
             <div v-if="book.featured" class="flex flex-col-reverse md:flex-row items-center justify-between px-4 lg:px-0">
                 <div class="max-w-md px-4 md:px-0">
                     <!-- <div class="text-base">{{ book.hero[0].heading }}</div> -->
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">{{ book.title }}</h2>
+                    <h2 class="text-2xl md:text-4xl font-display mb-4">{{ book.title }}</h2>
                     <div class="text-lg md:text-xl" v-html="book.hero[0].description"></div>
                     <div v-if="book.hero[0].buttonUrl" class="text-left my-10">
                         <a target="_blank" rel="noreferrer noopener" class="btn py-4 px-24 bg-brand-black text-white hover:bg-white hover:text-black cursor-pointer w-full md:w-auto" :href="book.hero[0].buttonUrl">{{book.hero[0].buttonText}}</a>
