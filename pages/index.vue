@@ -15,10 +15,10 @@
       </div>
     </div>
   </div>
-  <div class="bg-grey-darker py-10">
+  <div class="bg-grey-darker featured-stories py-10">
     <FeaturedStories></FeaturedStories>  
   </div>
-  <div class="bg-brand-grey">
+  <div class="bg-brand-grey featured-book">
     <FeaturedBook></FeaturedBook>
   </div>
   <div>
@@ -160,5 +160,37 @@ export default {
 }
 </script>
 <style lang="scss">
+
+.hero {
+  min-height: 188px;
+
+  @include min-bp($md) {
+    min-height: 224px;
+  }
+
+  @include min-bp($lg) {
+    min-height: 368px;
+  }
+}
+
+.featured-stories {
+  min-height: 770px;
+
+  @include min-bp($md) {
+    min-height: 954px;
+  }
+
+  @include min-bp($lg) {
+    min-height: 489px;
+  }
+}
+
+.featured-book {
+  min-height: 732px;
+
+  @include min-bp($md) {
+    min-height: 574px;
+  }
+}
 
 </style>

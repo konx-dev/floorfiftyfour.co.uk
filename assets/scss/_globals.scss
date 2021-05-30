@@ -14,14 +14,20 @@
     padding: 1rem 2.5rem;
 }
 
-// .article-view {
-    
-//     &__copy {
-
-//         p {
-//             margin-bottom: 20px !important;
-//             line-height: 1.75;
-//         }
-//     }
-// }
-
+/**
+ * Lazy load image fade effect
+ */
+ img.lazy {
+    opacity: 0;
+}
+img:not(.initial) {
+    transition: opacity 0.5s;
+}
+img.initial,
+img.loaded,
+img.error {
+    opacity: 1;
+}
+img:not([src]) {
+    visibility: hidden;
+}
