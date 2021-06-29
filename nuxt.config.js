@@ -84,7 +84,12 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
     '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://www.floorfiftyfour.co.uk/',
+    gzip: true,
+  },
   styleResources: {
     scss: ['~/assets/scss/*.scss']
   },

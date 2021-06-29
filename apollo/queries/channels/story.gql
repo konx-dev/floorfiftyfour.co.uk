@@ -8,7 +8,6 @@ query BlogArticle($slug: [String!]) {
         filename
         title
       }
-      seoTitle
       seoMetaDescription
       seoRobots(label: true)
       hero {
