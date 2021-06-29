@@ -9,7 +9,6 @@ query report($slug: [String!]) {
                 title
             }
             seoMetaDescription
-            seoCanonical
             seoRobots(label: true)
             id
             title

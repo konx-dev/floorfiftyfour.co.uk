@@ -43,6 +43,7 @@
                 <newsletter-general :message="articleMessage" class="relative z-10"></newsletter-general>
             </div>
         </div>
+        <div>{{ this.$route.params.slug }}</div>
     </div>
 </template>
 <script>
@@ -51,6 +52,7 @@ import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 // GraphQL Queries
 import article from '~/apollo/queries/channels/article'
 import articles from '~/apollo/queries/channels/articles'
+import globals from '~/apollo/queries/globals'
 
 export default {
 
@@ -61,7 +63,7 @@ export default {
             loading: 0,
             seoTitle: null,
             seoMetaDescription: null,
-            seoCanonical: null,
+            seoCanonical: 'https://www.floorfiftyfour.co.uk/blog/' + this.$route.params.slug,
             seoRobots: null,
             seoImage: null,
             seoType: null,
@@ -96,16 +98,27 @@ export default {
                 }
             },
             result({ data }) {
-                this.seoTitle = data.entry.seoTitle;
-                this.seoMetaDescription = data.entry.seoMetaDescription;
-                this.seoCanonical = data.entry.seoCanonical;
-                this.seoRobots = data.entry.seoRobots;
-                this.seoType = data.entry.seoContentType;
 
+                this.seoTitle = data.entry.title;
+
+                // sets meta description
+                if (data.entry.seoMetaDescription) {
+                    this.seoMetaDescription = data.entry.seoMetaDescription;
+                }
+
+                // sets robots.txt
+                if (data.entry.seoRobots) {
+                    this.seoRobots = data.entry.seoRobots;
+                }
+
+                // sets SEO type
+                if (data.entry.seoContentType) {
+                    this.seoType = data.entry.seoContentType;
+                }
+
+                // sets SEO image if available
                 if (data.entry.seoImage.length > 0) {
                     this.seoImage = data.entry.seoImage[0].filename
-                } else {
-                    this.seoImage = 'Cover-Tease.jpg'
                 }
             }
         },
@@ -113,6 +126,22 @@ export default {
             prefetch: true,
             query: articles,
         },
+        globalSets: {
+            prefetch: true,
+            query: globals,
+            result({ data }) {
+
+                // // sets meta description
+                if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
+                    this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
+                }
+
+                // // sets SEO image if available
+                if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
+                    this.seoImage = data.globalSets[0].seoImage[0].filename
+                }
+            }
+        }
     },
     head() {
         return {

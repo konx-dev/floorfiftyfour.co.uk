@@ -19,6 +19,7 @@ import Asset from '~/components/ReportBuilder/Asset.vue';
 
 // GraphQL Queries
 import report from '~/apollo/queries/structures/report'
+import globals from '~/apollo/queries/globals'
 
 export default {
 
@@ -27,7 +28,7 @@ export default {
             loading: 0,
             seoTitle: null,
             seoMetaDescription: null,
-            seoCanonical: null,
+            seoCanonical: 'https://www.floorfiftyfour.co.uk/reports/' + this.$route.params.slug,
             seoRobots: null,
             seoImage: null,
             seoType: null,
@@ -45,16 +46,45 @@ export default {
                 }
             },
             result({ data }) {
-                this.seoTitle = data.entry.seoTitle;
-                this.seoMetaDescription = data.entry.seoMetaDescription;
-                this.seoCanonical = data.entry.seoCanonical;
-                this.seoRobots = data.entry.seoRobots;
-                this.seoType = data.entry.seoContentType;
+                // set seo title
+                if (data.entry.seoTitle) {
+                    this.seoTitle = data.entry.seoTitle;
+                }
 
+                // sets meta description
+                if (data.entry.seoMetaDescription) {
+                    this.seoMetaDescription = data.entry.seoMetaDescription;
+                }
+
+                // sets robots.txt
+                if (data.entry.seoRobots) {
+                    this.seoRobots = data.entry.seoRobots;
+                }
+
+                // sets SEO type
+                if (data.entry.seoContentType) {
+                    this.seoType = data.entry.seoContentType;
+                }
+
+                // sets SEO image if available
                 if (data.entry.seoImage.length > 0) {
                     this.seoImage = data.entry.seoImage[0].filename
-                } else {
-                    this.seoImage = 'Cover-Tease.jpg'
+                }
+            }
+        },
+        globalSets: {
+            prefetch: true,
+            query: globals,
+            result({ data }) {
+
+                // // sets meta description
+                if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
+                    this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
+                }
+
+                // // sets SEO image if available
+                if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
+                    this.seoImage = data.globalSets[0].seoImage[0].filename
                 }
             }
         }

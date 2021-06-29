@@ -37,7 +37,6 @@
       </div>
     </div>
   </div>
-  
   <div class="bg-grey-darker py-5 md:py-10">
     <div class="max-w-4xl mx-auto px-4 lg:px-0">
       <newsletter-general :message="heroMessage" class="relative z-10"></newsletter-general>
@@ -54,6 +53,7 @@ import LatestBlog from "~/components/LatestBlog.vue"
 
 // GraphQL Queries
 import home from '~/apollo/queries/page/home'
+import globals from '~/apollo/queries/globals'
 
 export default {
 
@@ -112,16 +112,60 @@ export default {
       query: home,
       result({ data }) {
 
+        // set seo title
+        if (data.entries[0].seoTitle) {
           this.seoTitle = data.entries[0].seoTitle;
-          this.seoMetaDescription = data.entries[0].seoMetaDescription;
-          this.seoCanonical = data.entries[0].seoCanonical;
-          this.seoRobots = data.entries[0].seoRobots;
-          this.seoType = data.entries[0].seoContentType;
+        }
 
-          if (data.entries[0].seoImage.length > 0) {
-            this.seoImage = data.entries[0].seoImage[0].filename
-          } else {
-            this.seoImage = 'Cover-Tease.jpg'
+        // sets meta description
+        if (data.entries[0].seoMetaDescription) {
+          this.seoMetaDescription = data.entries[0].seoMetaDescription;
+        }
+
+        // sets canonical link
+        if (data.entries[0].seoCanonical) {
+          this.seoCanonical = data.entries[0].seoCanonical;
+        }
+
+        // sets robots.txt
+        if (data.entries[0].seoRobots) {
+          this.seoRobots = data.entries[0].seoRobots;
+        }
+
+        // sets SEO type
+        if (data.entries[0].seoContentType) {
+          this.seoType = data.entries[0].seoContentType;
+        }
+
+        // sets SEO image if available
+        if (data.entries[0].seoImage.length > 0) {
+          this.seoImage = data.entries[0].seoImage[0].filename
+        }
+      }
+    },
+    globalSets: {
+      prefetch: true,
+      query: globals,
+      result({ data }) {
+
+          // set seo title from global
+          if (data.globalSets[0].seoTitle && this.seoTitle == null) {
+            this.seoTitle = data.globalSets[0].seoTitle;
+          }
+
+          // sets meta description
+          if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
+            this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
+          }
+
+          // sets canonical link
+          if (data.globalSets[0].seoCanonical && this.seoCanonical == null) {
+            this.seoCanonical = data.globalSets[0].seoCanonical;
+          }
+
+          // sets SEO image if available
+          if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
+            this.seoImage = data.globalSets[0].seoImage[0].filename
           }
       }
     }

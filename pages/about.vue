@@ -17,6 +17,7 @@ import Asset from '~/components/PageBuilder/Asset.vue';
 
 // GraphQL Queries
 import about from '~/apollo/queries/page/about'
+import globals from '~/apollo/queries/globals'
 
 export default {
   apollo: {
@@ -25,12 +26,61 @@ export default {
       prefetch: true,
       query: about,
       result({ data }) {
-        this.seoTitle = data.entry.seoTitle;
-        this.seoMetaDescription = data.entry.seoMetaDescription;
-        this.seoCanonical = data.entry.seoCanonical;
-        this.seoRobots = data.entry.seoRobots;
-        this.seoType = data.entry.seoContentType;
-        this.seoImage = data.entry.seoImage[0].filename;
+        // set seo title
+        if (data.entry.seoTitle) {
+          this.seoTitle = data.entry.seoTitle;
+        }
+
+        // sets meta description
+        if (data.entry.seoMetaDescription) {
+          this.seoMetaDescription = data.entry.seoMetaDescription;
+        }
+
+        // sets canonical link
+        if (data.entry.seoCanonical) {
+          this.seoCanonical = data.entry.seoCanonical;
+        }
+
+        // sets robots.txt
+        if (data.entry.seoRobots) {
+          this.seoRobots = data.entry.seoRobots;
+        }
+
+        // sets SEO type
+        if (data.entry.seoContentType) {
+          this.seoType = data.entry.seoContentType;
+        }
+
+        // sets SEO image if available
+        if (data.entry.seoImage.length > 0) {
+          this.seoImage = data.entry.seoImage[0].filename
+        }
+      }
+    },
+    globalSets: {
+      prefetch: true,
+      query: globals,
+      result({ data }) {
+
+          // // set seo title from global
+          if (data.globalSets[0].seoTitle && this.seoTitle == null) {
+            this.seoTitle = data.globalSets[0].seoTitle;
+          }
+
+          // // sets meta description
+          if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
+            this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
+          }
+
+          // // sets canonical link
+          if (data.globalSets[0].seoCanonical && this.seoCanonical == null) {
+            this.seoCanonical = data.globalSets[0].seoCanonical;
+          }
+
+          // // sets SEO image if available
+          if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
+            this.seoImage = data.globalSets[0].seoImage[0].filename
+          }
       }
     }
   },

@@ -14,14 +14,12 @@ query BlogArticle($slug: [String!]) {
         }
       }
       contentField
-      seoTitle
       seoContentType
       seoImage {
         filename
         title
       }
       seoMetaDescription
-      seoCanonical
       seoRobots(label: true)
     }
   }

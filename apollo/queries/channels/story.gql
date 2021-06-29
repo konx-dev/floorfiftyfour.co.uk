@@ -3,14 +3,13 @@ query BlogArticle($slug: [String!]) {
     id
     title
     ... on shortStories_shortStories_Entry {
-      seoTitle
       seoContentType
       seoImage {
         filename
         title
       }
+      seoTitle
       seoMetaDescription
-      seoCanonical
       seoRobots(label: true)
       hero {
         ... on hero_BlockType {

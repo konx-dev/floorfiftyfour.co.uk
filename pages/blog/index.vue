@@ -21,7 +21,7 @@ import NewsletterGeneral from "~/components/Globals/NewsletterGeneral.vue";
 
 // GraphQL Queries
 import blogOverview from '~/apollo/queries/page/blogOverview'
-
+import globals from '~/apollo/queries/globals'
 
 export default {
     apollo: {
@@ -30,19 +30,63 @@ export default {
             prefetch: true,
             query: blogOverview,
             result({ data }) {
+                // set seo title
+                if (data.entries[0].seoTitle) {
                 this.seoTitle = data.entries[0].seoTitle;
-                this.seoMetaDescription = data.entries[0].seoMetaDescription;
-                this.seoCanonical = data.entries[0].seoCanonical;
-                this.seoRobots = data.entries[0].seoRobots;
-                this.seoType = data.entries[0].seoContentType;
+                }
 
+                // sets meta description
+                if (data.entries[0].seoMetaDescription) {
+                this.seoMetaDescription = data.entries[0].seoMetaDescription;
+                }
+
+                // sets canonical link
+                if (data.entries[0].seoCanonical) {
+                this.seoCanonical = data.entries[0].seoCanonical;
+                }
+
+                // sets robots.txt
+                if (data.entries[0].seoRobots) {
+                this.seoRobots = data.entries[0].seoRobots;
+                }
+
+                // sets SEO type
+                if (data.entries[0].seoContentType) {
+                this.seoType = data.entries[0].seoContentType;
+                }
+
+                // sets SEO image if available
                 if (data.entries[0].seoImage.length > 0) {
-                    this.seoImage = data.entries[0].seoImage[0].filename
-                } else {
-                    this.seoImage = 'Cover-Tease.jpg'
+                this.seoImage = data.entries[0].seoImage[0].filename
                 }
             }
-        }
+        },
+        globalSets: {
+            prefetch: true,
+            query: globals,
+            result({ data }) {
+
+                // set seo title from global
+                if (data.globalSets[0].seoTitle && this.seoTitle == null) {
+                    this.seoTitle = data.globalSets[0].seoTitle;
+                }
+
+                // sets meta description
+                if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
+                    this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
+                }
+
+                // sets canonical link
+                if (data.globalSets[0].seoCanonical && this.seoCanonical == null) {
+                    this.seoCanonical = data.globalSets[0].seoCanonical;
+                }
+
+                // sets SEO image if available
+                if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
+                    this.seoImage = data.globalSets[0].seoImage[0].filename
+                }
+            }
+        },
     },
     data() {
         return {
