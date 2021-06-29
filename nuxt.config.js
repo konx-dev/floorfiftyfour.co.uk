@@ -74,7 +74,8 @@ export default {
             icons: ['faEnvelope', 'faCopyright','faFolderOpen']
           },
       ]
-   }]
+    }],
+    '@/modules/generator'
   ],
   /*
   ** Nuxt.js modules
@@ -89,6 +90,11 @@ export default {
   sitemap: {
     hostname: 'https://www.floorfiftyfour.co.uk/',
     gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    }
   },
   styleResources: {
     scss: ['~/assets/scss/*.scss']
