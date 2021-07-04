@@ -3,10 +3,10 @@
         <template v-for="(featuredStory,index) in this.entries">
             <template v-if="featuredStory.featured === true && index < 2">
                 <nuxt-link :key="featuredStory.id" :to="'short-stories/' + featuredStory.slug" class="featured-tile max-w-xs mx-auto md:max-w-md w-full">
-                    <v-img class="w-full h-full object-cover" :src="featuredStory.hero[0].featuredImage[0].filename" :alt="featuredStory.hero[0].featuredImage[0].filename.title" :sizes="imageSizes" imgClass=" w-full " />
-                    <div class="max-w-xs md:max-w-sm lg:max-w-sm mx-auto text-white text-center p-2 relative -mt-16">
-                        <h3 class="text-xl bg-white text-black md:text-2xl font-bold mb-8">{{ featuredStory.hero[0].heading }}</h3>
-                        <div class="text-md md:text-lg" v-html="featuredStory.hero[0].description"></div>
+                    <v-img :src="featuredStory.hero[0].featuredImage[0].filename" :alt="featuredStory.hero[0].featuredImage[0].title" :sizes="imageSizes" imgClass="w-full featured__image" />
+                    <div class="max-w-xs featured__inner md:max-w-sm lg:max-w-sm mx-auto text-white text-center p-2 relative -mt-16">
+                        <h2 class="text-xl bg-white text-black md:text-2xl font-display mb-8">{{ featuredStory.hero[0].heading }}</h2>
+                        <div class="text-md font-primary md:text-lg" v-html="featuredStory.hero[0].description"></div>
                     </div>
                 </nuxt-link>
             </template>
@@ -62,6 +62,31 @@ export default {
     &:nth-child(even) {
         @include min-bp($lg) {
             margin-left: 1rem;
+        }
+    }
+}
+
+.featured {
+    &__inner {
+        min-height: 150px;
+
+        @include min-bp($md) {
+            min-height: 165px;
+        }
+    }
+
+    &__image {
+        width: 320px;
+        height: 231px;
+
+        @include min-bp($md) {
+            width: 448px;
+            height: 320px;
+        }
+
+        @include min-bp($lg) {
+            width: 432px;
+            height: 308px;
         }
     }
 }

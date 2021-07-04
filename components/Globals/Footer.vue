@@ -5,35 +5,43 @@
           <a
             href="https://www.reddit.com/r/RJHuntWrites/"
             target="_blank"
-            rel="nofollow"
+            aria-label="Reddit"
+            rel="noreferrer noopener nofollow"
             class="icon-circle icon-circle--reddit mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
             <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'reddit-alien']" />
+            <span class="sr-only">external link to RJHuntWrites reddit</span>
           </a>
           <a
             href="https://twitter.com/RJHUNTWRITES"
             target="_blank"
-            rel="nofollow"
+            aria-label="Twitter"
+            rel="noreferrer noopener nofollow"
             class="icon-circle icon-circle--twitter mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
             <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'twitter']" />
+            <span class="sr-only">external link to RJHuntWrites twitter</span>
           </a>
           <a
             href="mailto:floorfiftyfour@gmail.com"
+            aria-label="Mailto"
             class="icon-circle icon-circle--email mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
             <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['far', 'envelope']" />
+            <span class="sr-only">mail link to contact Floor Fifty-Four admins</span>
           </a>
           <a
             href="https://www.instagram.com/floorfiftyfourofficial/"
             target="_blank"
-            rel="nofollow"
+            aria-label="Instagram"
+            rel="noreferrer noopener nofollow"
             class="icon-circle icon-circle--instagram mx-4 transition-all duration-500 ease-in-out hover:bg-black"
           >
             <font-awesome-icon class="w-4 mx-auto h-auto icon" :icon="['fab', 'instagram']" />
+            <span class="sr-only">external link to RJHuntWrites instagram</span>
           </a>
         </div>
-        <div class="flex font-display items-center justify-center text-sm">
+        <div class="flex font-primary items-center justify-center text-sm">
           <div class="">Floor Fifty-Four, {{ new Date().getFullYear() }}</div>
         </div>
       </div>

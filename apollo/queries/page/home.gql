@@ -27,6 +27,15 @@ query HomeQuery {
           }
         }
       }
+      seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
+      seoMetaDescription
+      seoCanonical
+      seoRobots(label: true)
     }
   }
 }

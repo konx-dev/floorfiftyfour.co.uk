@@ -2,6 +2,15 @@ query aboutQuery {
   entry(slug: "about") {
     ... on about_about_Entry {
       id
+      seoTitle
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
+      seoMetaDescription
+      seoCanonical
+      seoRobots(label: true)
       hero {
         ... on hero_BlockType {
           heading

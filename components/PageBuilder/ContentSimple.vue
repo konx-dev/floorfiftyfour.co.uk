@@ -2,7 +2,7 @@
     <div class="my-10" :class="'bg-' + backgroundColour" > <!-- :class="'bg-' + block.backgroundColour" -->
         <div class="mx-auto font-primary container">
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-xl md:text-2xl font-bold mb-2">{{ block.contentTitle }}</h3>
+                <h3 class="text-xl md:text-2xl font-display mb-2">{{ block.contentTitle }}</h3>
                 <div class="text-md md:text-lg redactor__copy" v-html="block.contentCopy"></div>
             </div>
         </div>
@@ -39,7 +39,7 @@ export default {
 
     a {
         color: $red;
-        font-weight: $bolder;
+        font-family: $display;
     }
 }
 

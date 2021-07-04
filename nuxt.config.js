@@ -5,18 +5,32 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Floor Fifty-Four | Paranormal & Urban fantasy stories' || process.env.npm_package_name,
+    htmlAttrs: {
+      lang: 'en'
+    },
+    title: 'Floor Fifty-Four | Paranormal & Urban fantasy stories',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.' },
-      { hid: 'keywords', name: 'keywords', content: 'books, stories, paranormal, detectives, urban, fantasy, x-files, scp, rivers of london, crime, mystery'}
+
+      // OpenGraph tags
+      { hid: 'og:type', property: 'og:type', content: 'website', vmid: 'og:type' },
+      { hid: 'og:title', property: 'og:title', content: 'Floor Fifty-Four | Paranormal & Urban fantasy stories', vmid: 'og:title' },
+      { hid: 'og:description', property: 'og:description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.', vmid: 'og:description' },
+      { hid: 'og:url', property: 'og:url', content: 'https://www.floorfiftyfour.co.uk/', vmid: 'og:url' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Floor Fifty-Four', vmid: 'og:site_name'},
+
+      // Twitter card
+      { hid: 'twitter:title', property: 'twitter:title', content: 'Floor Fifty-Four | Paranormal & Urban fantasy stories', vmid: 'twitter:title' },
+      { hid: 'twitter:description', property: 'twitter:description', content: 'Books and stories of Paranormal Detectives and Urban Fantasy. Similar to X-files, SCP, Rivers of London, Agent Radford investigates crimes and mysteries.', vmid: 'twitter:description' },
+      { hid: 'twitter:site', property: 'twitter:site', content: 'Floor Fifty-Four', vmid: 'twitter:site'},
+      { hid: 'twitter:creator', property: 'twitter:creator', content: 'https://twitter.com/RJHUNTWRITES', vmid: 'twitter:creator'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/Favicon.ico' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&display=swap' },
+      // { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Special+Elite&display=swap' },
     ]
   },
   /*
@@ -60,20 +74,28 @@ export default {
             icons: ['faEnvelope', 'faCopyright','faFolderOpen']
           },
       ]
-   }]
+    }],
+    '@/modules/generator'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
     '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://www.floorfiftyfour.co.uk/',
+    gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    }
+  },
   styleResources: {
     scss: ['~/assets/scss/*.scss']
   },
@@ -84,12 +106,6 @@ export default {
       //   httpEndpoint: process.env.BACKEND_URL || "https://dev.floorfiftyfour.konx.dev/api"
       // }
     }
-  },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
   /*
   ** Build configuration

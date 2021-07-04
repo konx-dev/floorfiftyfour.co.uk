@@ -7,8 +7,9 @@
 module.exports = {
   theme: {
     fontFamily: {
-      'primary': ['Raleway','sans-serif'],
-      'typewriter': ['Special Elite', 'sans-serif']
+      'primary': ['Raleway Regular','sans-serif'],
+      'typewriter': ['Special Elite', 'sans-serif'],
+      'display': ['Raleway Bold','sans-serif'],
     },
     colors: {
       brand: {
@@ -30,7 +31,7 @@ module.exports = {
         darker: '#424242',
       },
       red: {
-        default: '#DC143C',
+        default: '#c01134',
       },
       debug: {
         red: 'red',

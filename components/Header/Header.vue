@@ -13,12 +13,12 @@
         <div @click="menuToggle()" :class="menuOpen ? 'menu--active' : 'menu'" class="fixed top-0 right-0 left-0 z-20 transition-transform duration-300 ease-in-out"  >
             <div class="flex flex-col h-screen justify-end bg-brand-black py-2 w-full md:w-5/12 lg:w-3/12 xl:w-2/12 ml-auto">
                 
-                <div class="text-white flex flex-col uppercase font-bold mt-40">
-                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/about">About</nuxt-link>
-                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/short-stories">Short Stories</nuxt-link>
-                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/items">Items of Interest</nuxt-link>
-                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/blog">Blog</nuxt-link>
-                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/books">Books</nuxt-link>
+                <div class="text-white flex flex-col uppercase font-display mt-40">
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/about/">About</nuxt-link>
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/short-stories/">Short Stories</nuxt-link>
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/items/">Items of Interest</nuxt-link>
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/blog/">Blog</nuxt-link>
+                    <nuxt-link class="py-5 flex w-full justify-center hover:bg-brand-grey hover:text-black" to="/books/">Books</nuxt-link>
                 </div>
                 <div class="mt-auto mb-40" v-if="globalSets">
                     <nuxt-link to="/"><v-img :src="globalSets[0].imageSingle[0].filename" :alt="globalSets[0].imageSingle[0].title" imgClass="w-20 h-20" /></nuxt-link>

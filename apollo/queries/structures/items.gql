@@ -4,6 +4,14 @@ query item($slug: [String!]) {
         title
         ... on itemsOfInterest_itemsOfInterest_Entry {
             id
+            seoTitle
+            seoContentType
+            seoImage {
+                filename
+                title
+            }
+            seoMetaDescription
+            seoRobots(label: true)
             hero {
                 ... on hero_BlockType {
                     id

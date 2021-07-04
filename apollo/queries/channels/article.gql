@@ -14,6 +14,13 @@ query BlogArticle($slug: [String!]) {
         }
       }
       contentField
+      seoContentType
+      seoImage {
+        filename
+        title
+      }
+      seoMetaDescription
+      seoRobots(label: true)
     }
   }
 }

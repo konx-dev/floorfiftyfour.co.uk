@@ -3,14 +3,14 @@
         <div v-for="(article, index) in articles" :key="index">
             
             <div @click="activeItemCheck(index)" class="accordion__card text-white px-4 py-6 md:py-12 relative z-10 bg-grey-darker text-center cursor-pointer">
-                <h2 class="font-primary font-bold text-lg md:text-2xl leading-tight mb-4">{{ article.hero[0].heading }}</h2>
-                <h3 class="text-xs md:text-lg">{{ article.postDate | dateFormat }}</h3>
+                <h2 class="font-display text-lg md:text-2xl leading-tight mb-4">{{ article.hero[0].heading }}</h2>
+                <h3 class="font-primary text-xs md:text-lg">{{ article.postDate | dateFormat }}</h3>
             </div>
 
             <div v-show="activeItem === index" class="text-left md:text-center text-white text-sm md:text-lg px-4 pb-6">
                 <div class="pb-3" v-html="article.hero[0].description"></div>
                 <div class="text-center my-6">
-                    <nuxt-link class="btn py-4 px-24 border border-white hover:bg-white hover:text-black cursor-pointer w-full md:w-auto" :to="'/blog/' + article.slug">Read More</nuxt-link>
+                    <nuxt-link class="btn font-display py-4 px-24 border border-white hover:bg-white hover:text-black cursor-pointer w-full md:w-auto" :to="article.slug + '/'">Read Post</nuxt-link>
                 </div>
             </div>
         </div>
