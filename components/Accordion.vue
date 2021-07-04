@@ -10,7 +10,7 @@
             <div v-show="activeItem === index" class="text-left md:text-center text-white text-sm md:text-lg px-4 pb-6">
                 <div class="pb-3" v-html="article.hero[0].description"></div>
                 <div class="text-center my-6">
-                    <nuxt-link class="btn font-display py-4 px-24 border border-white hover:bg-white hover:text-black cursor-pointer w-full md:w-auto" :to="'/blog/' + article.slug">Read Post</nuxt-link>
+                    <nuxt-link class="btn font-display py-4 px-24 border border-white hover:bg-white hover:text-black cursor-pointer w-full md:w-auto" :to="article.slug + '/'">Read Post</nuxt-link>
                 </div>
             </div>
         </div>
