@@ -21,27 +21,27 @@
         <div class="px-4 lg:px-0 bg-black py-5 lg:py-10">
             <div class="reports__links container mx-auto text-white text-xl md:text-3xl font-typewriter" v-html="entry.linkFields[0].blockHeading"></div>
             <div class="reports__links container mx-auto font-typewriter text-base md:text-lg underline text-white" v-for="link in entry.linkFields[0].linkField" :key="link.id">
-                <a v-if="link.itemType != 'entry' " :href="link.itemLink">{{ link.linkLabel }}</a>
-                <a v-else :href="trimEntry(link.itemLink)">{{ link.linkLabel }}</a>
+                <nuxt-link v-if="link.itemType != 'entry' " :to="link.itemLink">{{ link.linkLabel }}</nuxt-link>
+                <nuxt-link v-else :to="trimEntry(link.itemLink)">{{ link.linkLabel }}</nuxt-link>
             </div>
         </div>
         <div class="bg-grey" v-for="item in items" :key="item.id">
             <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
-                <a :class="{ 'opacity-50 pointer-events-none' : !item.prev }" aria-label="Previous Item" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.prev ? '/' + item.prev.uri + '/' : '/'" :key="'prev-' + item.id">
+                <nuxt-link :class="{ 'opacity-50 pointer-events-none' : !item.prev }" aria-label="Previous Item" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :to="item.prev ? '/' + item.prev.uri : '/'" :key="'prev-' + item.id">
                     <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
                     </div>
                     <span class="hidden md:block text-sm lg:text-base py-3 px-6 font-typewriter" v-if="item.prev">{{ item.prev.title }}</span>
-                </a>
-                <a href="/items/" aria-label="Return to Items of Interest Home" class="bg-black rounded lg:rounded-lg p-2">
+                </nuxt-link>
+                <nuxt-link to="/items" aria-label="Return to Items of Interest Home" class="bg-black rounded lg:rounded-lg p-2">
                     <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
-                </a>
-                <a :class="!item.next ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" aria-label="Next Item" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.next ? '/' + item.next.uri + '/' : '/'" :key="'next-' + item.id">
+                </nuxt-link>
+                <nuxt-link :class="!item.next ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" aria-label="Next Item" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :to="item.next ? '/' + item.next.uri : '/'" :key="'next-' + item.id">
                     <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
                     <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
                     </div>
-                </a>
+                </nuxt-link>
             </div>
         </div>
         <items-list />

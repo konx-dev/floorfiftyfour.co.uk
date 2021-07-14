@@ -1,6 +1,6 @@
 <template>
         <div class="container mx-auto flex-wrap flex flex-col md:flex-row justify-center items-center">
-            <nuxt-link :to="item.slug + '/'" class="card cursor-pointer relative w-auto md:w-full h-full my-2 md:m-4 max-w-sm md:max-w-md" v-for="item in entries" :key="item.id">
+            <nuxt-link :to="'/short-stories/' + item.slug" class="card cursor-pointer relative w-auto md:w-full h-full my-2 md:m-4 max-w-sm md:max-w-md" v-for="item in entries" :key="item.id">
                     <div class="absolute w-4/5 card__inner font-primary text-white z-10">
                         <h2 class="font-display text-2xl md:text-4xl my-5 relative text-center leading-tight">{{ item.hero[0].heading }}</h2>
                         <!-- <div class="text-center" v-html="item.hero[0].description"></div> -->
