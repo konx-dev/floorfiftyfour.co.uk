@@ -9,7 +9,7 @@
                 <div class="text-base md:text-xl" v-html="LatestPost.hero[0].description"></div>
                 <div class="flex flex-col text-center md:text-left md:flex-row mt-5 md:mt-10">
                     <nuxt-link class="btn font-display mb-4 md:mb-0 md:mr-4 border border-black bg-black text-white transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker" :to="'blog/' + LatestPost.slug">Read Now</nuxt-link>
-                    <nuxt-link class="py-4 font-display px-10 border border-black transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker hover:text-white" to="blog">View All</nuxt-link>
+                    <nuxt-link class="py-4 font-display px-10 border border-black transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker hover:text-white" to="/blog/">View All</nuxt-link>
                 </div>
             </div>
         </div>

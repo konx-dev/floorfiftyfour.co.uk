@@ -8,7 +8,7 @@
             <div class="article-view__copy text-white text-md md:text-lg max-w-3xl mx-auto font-bold" v-html="entry.contentField"></div>
         </div>
     </div> -->
-    <div v-if="entry && globals" class="h-full bg-grey-darker">
+    <div v-if="entry" class="h-full bg-grey-darker">
         <div class="hero relative overflow-hidden bg-black h-full text-white text-center px-4 py-12 md:py-32 font-primary">
             <h1 class="relative z-10 font-display text-2xl md:text-3xl lg:text-5xl">{{ entry.hero[0].heading }}</h1>
             <div class="relative z-10 text-md md:text-2xl mx-auto w-64 md:w-auto md:max-w-xl">{{ entry.title }}</div>
@@ -20,22 +20,22 @@
         <div class="bg-grey" v-for="item in entries" :key="item.id">
             <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
                 <!-- PREV BLOG POST -->
-                <!-- <a :class=" { 'opacity-50 pointer-events-none' : !item.next }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.next ? '/blog/' + item.next.slug + '/' : '/'" :key="item.id">
+                <nuxt-link :class=" { 'opacity-50 pointer-events-none' : !item.next }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :to="item.next ? '/blog/' + item.next.slug : '/'" :key="item.id">
                     <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
                     </div>
                     <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
-                </a> -->
-                <a href="/blog/" class="bg-black rounded lg:rounded-lg p-2">
+                </nuxt-link>
+                <nuxt-link to="/blog" class="bg-black rounded lg:rounded-lg p-2">
                     <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
-                </a>
+                </nuxt-link>
                 <!-- NEXT BLOG POST -->
-                <!-- <a :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.prev ? '/blog/' + item.prev.slug + '/' : '/'" :key="item.id">
+                <nuxt-link :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :to="item.prev ? '/blog/' + item.prev.slug : '/'" :key="item.id">
                     <span class="hidden md:block text-sm lg:text-base py-3 px-6 font-typewriter" v-if="item.prev">{{ item.prev.title }}</span>
                     <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
                     </div>
-                </a> -->
+                </nuxt-link>
             </div>
         </div>
         <div class="bg-grey-darker py-5 md:py-10">
@@ -116,7 +116,7 @@ export default {
                 }
 
                 // sets SEO image if available
-                if (data.entry.seoImage) {
+                if (data.entry.seoImage.length > 0) {
                     this.seoImage = data.entry.seoImage[0].filename
                 }
             }
@@ -142,31 +142,31 @@ export default {
             }
         }
     },
-    // head() {
-    //     return {
-    //         title: this.seoTitle,
-    //         link: [
-    //             { rel: 'canonical', href: this.seoCanonical }
-    //         ],
-    //         meta: [
-    //             { hid: 'description', name: 'description', content: this.seoMetaDescription },
-    //             { hid: 'robots', name: 'robots', content: this.seoRobots },
+    head() {
+        return {
+            title: this.seoTitle,
+            link: [
+                { rel: 'canonical', href: this.seoCanonical }
+            ],
+            meta: [
+                { hid: 'description', name: 'description', content: this.seoMetaDescription },
+                { hid: 'robots', name: 'robots', content: this.seoRobots },
 
-    //             // OpenGraph tags
-    //             { hid: 'og:type', property: 'og:type', content: this.seoType, vmid: 'og:type' },
-    //             { hid: 'og:title', property: 'og:title', content: this.seoTitle, vmid: 'og:title' },
-    //             { hid: 'og:description', property: 'og:description', content: this.seoMetaDescription, vmid: 'og:description' },
-    //             { hid: 'og:image', property: 'og:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'og:image' },
-    //             { hid: 'og:url', property: 'og:url', content: this.seoCanonical, vmid: 'og:url' },
+                // OpenGraph tags
+                { hid: 'og:type', property: 'og:type', content: this.seoType, vmid: 'og:type' },
+                { hid: 'og:title', property: 'og:title', content: this.seoTitle, vmid: 'og:title' },
+                { hid: 'og:description', property: 'og:description', content: this.seoMetaDescription, vmid: 'og:description' },
+                { hid: 'og:image', property: 'og:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'og:image' },
+                { hid: 'og:url', property: 'og:url', content: this.seoCanonical, vmid: 'og:url' },
 
-    //             // Twitter card
-    //             { hid: 'twitter:title', property: 'twitter:title', content: this.seoTitle, vmid: 'twitter:title' },
-    //             { hid: 'twitter:description', property: 'twitter:description', content: this.seoMetaDescription, vmid: 'twitter:description' },
-    //             { hid: 'twitter:image', property: 'twitter:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'twitter:image' },
+                // Twitter card
+                { hid: 'twitter:title', property: 'twitter:title', content: this.seoTitle, vmid: 'twitter:title' },
+                { hid: 'twitter:description', property: 'twitter:description', content: this.seoMetaDescription, vmid: 'twitter:description' },
+                { hid: 'twitter:image', property: 'twitter:image', content: 'https://ik.imagekit.io/2lyxtm1dps/' + this.seoImage, vmid: 'twitter:image' },
                 
-    //         ],
-    //     }
-    // },
+            ],
+        }
+    },
     components: {
         NewsletterGeneral
     }

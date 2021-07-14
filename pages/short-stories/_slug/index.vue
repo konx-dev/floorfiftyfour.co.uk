@@ -11,28 +11,28 @@
         </div>
         <div class="container mx-auto my-10 px-4">
             <div class="max-w-3xl mx-auto flex flex-col">
-                <a class="font-display text-red text-base md:text-xl mb-2" :href="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
+                <!-- <nuxt-link class="font-display text-red text-base md:text-xl mb-2" :to="'/' + report.reportEntry[0].uri" v-for="report in entry.report" :key="report.id">
                     {{ report.reportLabel }}
-                </a>
+                </nuxt-link> -->
             </div>
         </div>
         <div class="bg-grey" v-for="item in entries" :key="item.id">
             <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
-                <!-- <a :class="{ 'opacity-50 pointer-events-none' : !item.next }" aria-label="Previous Title" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :href="item.next ? '/' + item.next.uri + '/' : '/'" :key="item.id">
+                <nuxt-link :class="{ 'opacity-50 pointer-events-none' : !item.next }" aria-label="Previous Title" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :to="item.next ? '/' + item.next.uri : '/'" :key="item.id">
                     <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
                     </div>
                     <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
-                </a> -->
-                <a href="/short-stories/" aria-label="Return to Short Stories Home" class="bg-black rounded lg:rounded-lg p-2">
+                </nuxt-link>
+                <nuxt-link to="/short-stories" aria-label="Return to Short Stories Home" class="bg-black rounded lg:rounded-lg p-2">
                     <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
-                </a>
-                <!-- <a :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" aria-label="Next Title" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :href="item.prev ? '/' + item.prev.uri + '/' : '/'" :key="item.id">
+                </nuxt-link>
+                <nuxt-link :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" aria-label="Next Title" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :to="item.prev ? '/' + item.prev.uri  : '/'" :key="item.id">
                     <span class="hidden md:block text-sm lg:text-base py-3 px-6 font-typewriter" v-if="item.prev">{{ item.prev.title }}</span>
                     <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
                     </div>
-                </a> -->
+                </nuxt-link>
             </div>
         </div>
         <div class="bg-grey-darker py-5 md:py-10">

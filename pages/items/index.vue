@@ -10,7 +10,7 @@
         </div>
         <div class="py-10">
             <div class="container mx-auto flex flex-row justify-center flex-wrap p-5">
-                <nuxt-link :to="item.slug + '/'" v-for="item in items" :key="item.id" class="item-card m-2 lg:m-5 bg-white p-5">
+                <nuxt-link :to="'items/' + item.slug" v-for="item in items" :key="item.id" class="item-card m-2 lg:m-5 bg-white p-5">
                     <div class="w-full max-width">
                         <v-img v-if="item.hero[0].image[0]" :sizes="heroSizes" :src="item.hero[0].image[0].filename" :alt="item.hero[0].image[0].title" />
                     </div>
