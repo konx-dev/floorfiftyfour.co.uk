@@ -1,10 +1,10 @@
 <template>
     <div class="items-list z-20 bg-grey" :class="{ 'items-list--open' : sidebarOpen }">
         <div class="flex flex-col justify-center items-center md:h-screen lg:h-full overflow-auto">
-            <a class="font-typewriter mb-6 text-center text-grey-darker hover:text-black" :href="'/' + item.uri + '/' " v-for="item in items" :key="item.id">
+            <router-link class="font-typewriter mb-6 text-center text-grey-darker hover:text-black" :to=" item.uri " v-for="item in items" :key="item.id">
                 <span class="text-base">{{ item.hero[0].heading }}:</span>
                 <span class="text-xl" v-html="item.hero[0].subHeading"></span>
-            </a>
+            </router-link>
         </div>
         <div @click="sidebarToggle()" class="items-badge bg-grey hidden md:block cursor-pointer">
             <div class="items-badge__icon">

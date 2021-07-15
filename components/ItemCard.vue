@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="item.slug + '/'" class="item-card m-2 lg:m-5 bg-white p-5">
+    <nuxt-link :to="'/items/' + item.slug + '/'" class="item-card m-2 lg:m-5 bg-white p-5">
         <div class="w-full max-width">
             <v-img v-if="item.hero[0].image[0]" :sizes="heroSizes" :src="item.hero[0].image[0].filename" :alt="item.hero[0].image[0].title" />
         </div>

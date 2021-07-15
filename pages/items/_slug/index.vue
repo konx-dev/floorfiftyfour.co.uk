@@ -44,7 +44,7 @@
                 </nuxt-link>
             </div>
         </div>
-        <items-list />
+        <!-- <items-list /> -->
     </div>
     
 </template>
