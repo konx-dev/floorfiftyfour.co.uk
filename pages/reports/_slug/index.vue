@@ -28,7 +28,7 @@ export default {
             loading: 0,
             seoTitle: null,
             seoMetaDescription: null,
-            seoCanonical: 'https://www.floorfiftyfour.co.uk/reports/' + this.$route.params.slug,
+            seoCanonical: 'https://www.floorfiftyfour.co.uk/reports/' + this.$route.params.slug + '/',
             seoRobots: null,
             seoImage: null,
             seoType: null,
@@ -77,12 +77,17 @@ export default {
             query: globals,
             result({ data }) {
 
-                // // sets meta description
+                // sets meta title
+                if (data.globalSets[0].seoTitle && this.seoTitle == null) {
+                    this.seoTitle = data.globalSets[0].seoTitle;
+                }
+
+                // sets meta description
                 if (data.globalSets[0].seoMetaDescription && this.seoMetaDescription == null) {
                     this.seoMetaDescription = data.globalSets[0].seoMetaDescription;
                 }
 
-                // // sets SEO image if available
+                // sets SEO image if available
                 if (data.globalSets[0].seoImage.length > 0 && this.seoImage == null) {
                     this.seoImage = data.globalSets[0].seoImage[0].filename
                 }

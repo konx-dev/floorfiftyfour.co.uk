@@ -34,32 +34,32 @@ export default {
 
                 // set seo title
                 if (data.entries[0].seoTitle) {
-                this.seoTitle = data.entries[0].seoTitle;
+                    this.seoTitle = data.entries[0].seoTitle;
                 }
 
                 // sets meta description
                 if (data.entries[0].seoMetaDescription) {
-                this.seoMetaDescription = data.entries[0].seoMetaDescription;
+                    this.seoMetaDescription = data.entries[0].seoMetaDescription;
                 }
 
                 // sets canonical link
                 if (data.entries[0].seoCanonical) {
-                this.seoCanonical = data.entries[0].seoCanonical;
+                    this.seoCanonical = data.entries[0].seoCanonical + '/';
                 }
 
                 // sets robots.txt
                 if (data.entries[0].seoRobots) {
-                this.seoRobots = data.entries[0].seoRobots;
+                    this.seoRobots = data.entries[0].seoRobots;
                 }
 
                 // sets SEO type
                 if (data.entries[0].seoContentType) {
-                this.seoType = data.entries[0].seoContentType;
+                    this.seoType = data.entries[0].seoContentType;
                 }
 
                 // sets SEO image if available
                 if (data.entries[0].seoImage.length > 0) {
-                this.seoImage = data.entries[0].seoImage[0].filename
+                    this.seoImage = data.entries[0].seoImage[0].filename
                 }
             }
         },
@@ -80,7 +80,7 @@ export default {
 
                 // sets canonical link
                 if (data.globalSets[0].seoCanonical && this.seoCanonical == null) {
-                    this.seoCanonical = data.globalSets[0].seoCanonical;
+                    this.seoCanonical = data.globalSets[0].seoCanonical + '/';
                 }
 
                 // sets SEO image if available

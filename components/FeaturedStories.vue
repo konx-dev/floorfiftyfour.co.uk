@@ -2,7 +2,7 @@
     <div class="max-w-4xl mx-auto flex flex-col lg:flex-row justify-between">
         <template v-for="(featuredStory,index) in this.entries">
             <template v-if="featuredStory.featured === true && index < 2">
-                <nuxt-link :key="featuredStory.id" :to="'short-stories/' + featuredStory.slug" class="featured-tile max-w-xs mx-auto md:max-w-md w-full">
+                <nuxt-link :key="featuredStory.id" :to="'short-stories/' + featuredStory.slug + '/'" class="featured-tile max-w-xs mx-auto md:max-w-md w-full">
                     <v-img :src="featuredStory.hero[0].featuredImage[0].filename" :alt="featuredStory.hero[0].featuredImage[0].title" :sizes="imageSizes" imgClass="w-full featured__image" />
                     <div class="max-w-xs featured__inner md:max-w-sm lg:max-w-sm mx-auto text-white text-center p-2 relative -mt-16">
                         <h2 class="text-xl bg-white text-black md:text-2xl font-display mb-8">{{ featuredStory.hero[0].heading }}</h2>

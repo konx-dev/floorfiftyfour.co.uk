@@ -62,7 +62,7 @@ export default {
             loading: 0,
             seoTitle: null,
             seoMetaDescription: null,
-            seoCanonical: 'https://www.floorfiftyfour.co.uk/blog/' + this.$route.params.slug,
+            seoCanonical: 'https://www.floorfiftyfour.co.uk/blog/' + this.$route.params.slug + '/',
             seoRobots: null,
             seoImage: null,
             seoType: null,
