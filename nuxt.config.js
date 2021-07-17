@@ -74,7 +74,8 @@ export default {
             icons: ['faEnvelope', 'faCopyright','faFolderOpen']
           },
       ]
-    }]
+    }],
+    '@/modules/generator'
   ],
   /*
   ** Nuxt.js modules
@@ -83,7 +84,8 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap'
   ],
   sitemap: {
     hostname: 'https://www.floorfiftyfour.co.uk/',

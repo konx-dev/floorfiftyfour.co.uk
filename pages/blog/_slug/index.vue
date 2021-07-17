@@ -20,17 +20,17 @@
         <div class="bg-grey" v-for="item in entries" :key="item.id">
             <div class="container mx-auto px-4 lg:px-0 py-10 flex flex-row items-center justify-between" v-if="item.slug === routeID" :key="item.id">
                 <!-- PREV BLOG POST -->
-                <nuxt-link :class=" { 'opacity-50 pointer-events-none' : !item.next }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :to="item.next ? '/blog/' + item.next.slug : '/'" :key="item.id">
+                <nuxt-link :class=" { 'opacity-50 pointer-events-none' : !item.next }" class="entry-navigation bg-white flex flex-row items-center justify-between rounded-lg" :to="item.next ? '/blog/' + item.next.slug + '/' : '/'" :key="item.id">
                     <div class="entry-navigation__button entry-navigation__button--left flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-left']" />
                     </div>
                     <span class="text-sm lg:text-base py-3 px-6 font-typewriter hidden md:block" v-if="item.next">{{ item.next.title }}</span>
                 </nuxt-link>
-                <nuxt-link to="/blog" class="bg-black rounded lg:rounded-lg p-2">
+                <nuxt-link to="/blog/" class="bg-black rounded lg:rounded-lg p-2">
                     <font-awesome-icon class="text-2xl text-white" :icon="['fas', 'th']" />
                 </nuxt-link>
                 <!-- NEXT BLOG POST -->
-                <nuxt-link :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :to="item.prev ? '/blog/' + item.prev.slug : '/'" :key="item.id">
+                <nuxt-link :class="!item.prev ? 'opacity-50 pointer-events-none justify-end' : 'justify-between'" class="entry-navigation bg-white flex flex-row items-center rounded-lg" :to="item.prev ? '/blog/' + item.prev.slug + '/' : '/'" :key="item.id">
                     <span class="hidden md:block text-sm lg:text-base py-3 px-6 font-typewriter" v-if="item.prev">{{ item.prev.title }}</span>
                     <div class="entry-navigation__button entry-navigation__button--right flex items-center bg-black h-full p-3">
                         <font-awesome-icon class="text-xl text-white" :icon="['fas', 'long-arrow-alt-right']" />
