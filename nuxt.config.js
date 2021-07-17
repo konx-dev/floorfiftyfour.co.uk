@@ -96,6 +96,9 @@ export default {
       lastmod: new Date()
     }
   },
+  router: { 
+    trailingSlash: true 
+  },
   styleResources: {
     scss: ['~/assets/scss/*.scss']
   },
