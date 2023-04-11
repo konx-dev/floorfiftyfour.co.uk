@@ -12,21 +12,21 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-regular-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@nuxtjs/apollo": "^4.0.1-rc.3",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/sitemap": "^2.4.0",
-    "graphql": "^15.3.0",
-    "nuxt": "^2.14.4",
-    "qs": "^6.9.4",
-    "vanilla-lazyload": "^17.1.2"
+    "graphql": "^15.8.0",
+    "nuxt": "^2.16.3",
+    "qs": "^6.11.1",
+    "vanilla-lazyload": "^17.8.3"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.2.1",
     "@nuxtjs/tailwindcss": "^2.1.1",
     "node-sass": "^4.14.1",
     "nuxt-fontawesome": "^0.4.0",
