@@ -1,10 +1,9 @@
-/*
-** TailwindCSS Configuration File
-**
-** Docs: https://tailwindcss.com/docs/configuration
-** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-*/
 module.exports = {
+  mode: 'jit',
+  content: [
+      '~/pages/**/*.vue',
+      '~/components/**/*.vue',
+  ],
   theme: {
     fontFamily: {
       'primary': ['Raleway Regular','sans-serif'],
@@ -39,10 +38,10 @@ module.exports = {
         yellow: 'yellow'
       }
     }
+    
   },
-  future: {
-    removeDeprecatedGapUtilities: true,
+  variants: {
+    extend: {},
   },
-  variants: {},
-  plugins: []
+  plugins: [],
 }

@@ -22,15 +22,14 @@
     "graphql": "^15.8.0",
     "nuxt": "^2.16.3",
     "qs": "^6.11.1",
+    "sass-loader": "^10.1.1",
     "vanilla-lazyload": "^17.8.3"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
-    "@nuxtjs/tailwindcss": "^2.1.1",
-    "node-sass": "^4.14.1",
+    "@nuxtjs/tailwindcss": "^6.6.5",
     "nuxt-fontawesome": "^0.4.0",
-    "nuxt-purgecss": "^1.0.0",
-    "sass-loader": "^8.0.2"
+    "sass": "^1.61.0"
   }
 }
