@@ -1,12 +1,12 @@
 <template>
 <div>
   <div class="h-auto md:h-full hero overflow-hidden relative">
-    <div class="container font-primary mx-auto max-w-4xl">
+    <div class="container font-primary mx-auto py-5 md:py-14 lg:py-20 max-w-4xl">
       <div v-for="entry in entries" :key="entry.id" class="text-white font-display px-5 lg:px-0">
-        <div class="w-24 h-24 lg:w-32 lg:h-32 relative z-10 my-4 lg:my-8 mx-auto">
+        <div class="w-24 h-24 lg:w-32 lg:h-32 mb-4 md:mb-8 relative z-10 mx-auto">
           <v-img class="w-full h-full object-cover" v-if="entry.hero[0].image[0]" :src="entry.hero[0].image[0].filename" :alt="entry.hero[0].image[0].title" />
         </div>
-        <h1 class="relative text-center z-10 text-2xl md:text-5xl lg:text-6xl font-raleway-bold mb-6 lg:mb-20" id="signup_anchor">
+        <h1 class="relative text-center z-10 text-2xl md:text-5xl lg:text-6xl font-raleway-bold" id="signup_anchor">
           {{ entry.hero[0].heading }}
         </h1>
         <!-- <h2 v-html="entry.hero[0].subHeading" class="relative z-10 text-base md:text-2xl font-bold mb-4"></h2>
@@ -15,18 +15,28 @@
       </div>
     </div>
   </div>
-  <div class="bg-grey-darker featured-stories py-10">
+  <div class="bg-brand-grey">
+    <div class="container mx-auto">
+      Latest block here
+    </div>
+  </div>
+  <!-- <div class="bg-grey-darker featured-stories py-10">
     <FeaturedStories></FeaturedStories>  
-  </div>
-  <div class="bg-brand-grey featured-book">
+  </div> -->
+  <!-- <div class="bg-brand-grey featured-book">
     <FeaturedBook></FeaturedBook>
-  </div>
+  </div> -->
   <div>
     <LatestBlog></LatestBlog>
   </div>
+  <div class="bg-grey-darker">
+    <div class="container mx-auto">
+      What is floor fifty four block here
+    </div>
+  </div>
   <div v-if="entries" class="bg-brand-grey">
     <div class="mx-auto font-primary container py-10 md:py-20">
-      <div class="max-w-4xl mx-auto text-center my-10 px-5 lg:px-0">
+      <div class="max-w-4xl mx-auto text-center mb-10 px-5 lg:px-0">
         <h3 class="text-2xl md:text-4xl font-display mb-2">{{ entries[0].instafeed[0].instaTitle }}</h3>
         <div class="text-md md:text-xl">{{ entries[0].instafeed[0].subHeading }}</div>
       </div>
@@ -204,18 +214,6 @@ export default {
 }
 </script>
 <style lang="scss">
-
-.hero {
-  min-height: 188px;
-
-  @include min-bp($md) {
-    min-height: 224px;
-  }
-
-  @include min-bp($lg) {
-    min-height: 368px;
-  }
-}
 
 .featured-stories {
   min-height: 770px;
