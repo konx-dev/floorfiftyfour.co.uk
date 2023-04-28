@@ -1,5 +1,5 @@
-query StoriesQuery {
-  entries(section: "shortStories") {
+query StoriesQuery($limit: Int) {
+  entries(section: "shortStories", limit: $limit) {
     ... on shortStories_shortStories_Entry {
       featured
       slug
