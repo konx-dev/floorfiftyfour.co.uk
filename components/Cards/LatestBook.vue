@@ -1,12 +1,14 @@
 <template>
     <div v-if="entry">
-        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">Books</div>
-        <nuxt-link to="/books/" class="max-w-xs mx-auto md:max-w-md w-full">
+        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">
+            <nuxt-link to="/books/" class="">Books</nuxt-link>
+        </div>
+        <a :href="entry.entries[0].hero[0].buttonUrl" target="_blank" class="max-w-xs mx-auto md:max-w-md w-full">
             <v-img :src="entry.entries[0].hero[0].image[0].filename" :alt="entry.entries[0].hero[0].image[0].title" :sizes="imageSizes" imgClass="w-full latest__image" />
             <div class="max-w-xs latest__inner md:max-w-sm lg:max-w-sm mx-auto text-white text-center p-2 relative -mt-12">
                 <h2 class="text-base capitalize md:text-xl bg-white text-black font-display mb-8">{{ entry.entries[0].title }}</h2>
             </div>
-        </nuxt-link>
+        </a>
     </div>
 </template>
 <script>
@@ -45,6 +47,9 @@ export default {
                 this.entry = data
             }
         }
+    },
+    mounted() {
+        console.log(this.entry)
     }
 }
 </script>

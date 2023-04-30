@@ -1,6 +1,8 @@
 <template>
     <div v-if="ctx">
-        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">Items of Interest</div>
+        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">
+            <nuxt-link to="/items/" class="">Items of Interest</nuxt-link>
+        </div>
         <nuxt-link :to="'items/' + ctx.entry.slug + '/'" class="max-w-xs mx-auto md:max-w-md w-full">
             <v-img :src="ctx.entry.hero[0].image[0].filename" :alt="ctx.entry.hero[0].image[0].title" :sizes="imageSizes" imgClass="w-full latest__image" />
             <div class="max-w-xs latest__inner md:max-w-sm lg:max-w-sm mx-auto text-white text-center p-2 relative -mt-12">

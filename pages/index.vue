@@ -6,10 +6,10 @@
         <div class="w-24 h-24 lg:w-32 lg:h-32 mb-4 md:mb-8 relative z-10 mx-auto">
           <v-img class="w-full h-full object-cover" v-if="entry.hero[0].image[0]" :src="entry.hero[0].image[0].filename" :alt="entry.hero[0].image[0].title" />
         </div>
-        <h1 class="relative text-center z-10 text-2xl md:text-5xl lg:text-6xl font-raleway-bold" id="signup_anchor">
+        <h1 class="z-[-1] pointer-events-none absolute text-center z-10 text-2xl md:text-5xl lg:text-6xl font-raleway-bold" id="signup_anchor">
           {{ entry.hero[0].heading }}
         </h1>
-        <div class="mt-5 md:mt-10 lg:mt-20">
+        <div class="mt-5 md:mt-10">
           <LatestContent />
         </div>
         <v-img v-if="entry.hero[0].featuredImage[0]" class="w-full h-full object-cover" :lazyLoad="false" :src="entry.hero[0].featuredImage[0].filename" :sizes="heroSizes" :alt="entry.hero[0].featuredImage[0].title" imgClass="absolute h-full w-full left-0 right-0 top-0 bottom-0" />

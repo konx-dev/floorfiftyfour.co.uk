@@ -1,5 +1,5 @@
 <template>
-    <div class="relative z-10 flex flex-col lg:flex-row md:gap-5 lg:gap-8 container mx-auto">
+    <div class="relative z-10 flex flex-col lg:flex-row justify-center md:gap-5 lg:gap-8 container mx-auto">
         <LatestStory />
         <LatestItem />
         <LatestBook />

@@ -1,6 +1,8 @@
 <template>
     <div v-if="entry">
-        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">Short Stories</div>
+        <div class="text-center text-xl md:text-3xl mb-4 md:mb-6">
+            <nuxt-link to="/short-stories/" class="">Short Stories</nuxt-link>
+        </div>
         <template v-for="(featuredStory,index) in this.entries">
             <nuxt-link :to="'short-stories/' + featuredStory.slug + '/'" class="latest-tile max-w-xs mx-auto md:max-w-md w-full">
                 <v-img :src="featuredStory.hero[0].featuredImage[0].filename" :alt="featuredStory.hero[0].featuredImage[0].title" :sizes="imageSizes" imgClass="w-full latest__image" />
