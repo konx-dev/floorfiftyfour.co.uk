@@ -23,7 +23,7 @@ export default {
                 320: {
                     tr: 'w-360,h-260'
                 },
-                // ipad
+                // ipadd
                 768: {
                     tr: 'w-420,h-300'
                 },
