@@ -1,5 +1,5 @@
-query BooksQuery {
-  entries(section: "books") {
+query BooksQuery($limit: Int) {
+  entries(section: "books", limit: $limit) {
     slug
     title
     ... on books_books_Entry {

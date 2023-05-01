@@ -1,9 +1,10 @@
-query item($slug: [String!]) {
-    entry (section: "itemsOfInterest", slug: $slug) {
+query item($slug: [String!], $limit: Int) {
+    entry (section: "itemsOfInterest", slug: $slug, limit: $limit) {
         id
         title
         ... on itemsOfInterest_itemsOfInterest_Entry {
             id
+            slug
             seoTitle
             seoContentType
             seoImage {

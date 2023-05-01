@@ -1,7 +1,7 @@
 <template>
-        <div v-if="entries" class="featured-card__container font-primary py-20 md:py-40" :style="{ backgroundImage: `url('${featuredImage }')` }">
+        <div v-if="entries" class="featured-card__container px-5 font-primary py-20 md:py-40" :style="{ backgroundImage: `url('${featuredImage }')` }">
             
-            <div class="inner w-auto container relative z-10 mx-5 md:mx-auto max-w-4xl bg-white px-5 md:px-10 pb-5 pt-10 md:pt-20 md:pb-10">
+            <div class="inner w-auto container relative z-10 mx-auto max-w-4xl bg-white px-5 md:px-10 pb-5 pt-10 md:pt-20 md:pb-10">
                 <h2 class="absolute inner__section-title text-center md:text-right text-white font-display uppercase text-xl md:text-4xl container mx-auto max-w-4xl">
                     Latest Blog Post
                 </h2>
@@ -89,7 +89,7 @@ export default {
                 left: 0px;
 
                 @include min-bp($md) {
-                    top: -40px;
+                    top: -33px;
                 }
             }
         }
