@@ -19,7 +19,7 @@ let getQueryStringParams = query => {
 
 export default ({req, app}) => {
     let response = {
-        httpEndpoint: process.env.BACKEND_URL || "https://dev.floorfiftyfour.konx.dev/api",
+        httpEndpoint: process.env.BACKEND_URL,
         tokenName: 'craft-token',
         getAuth: () => null,
         cache: new InMemoryCache({ fragmentMatcher })

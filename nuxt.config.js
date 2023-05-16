@@ -104,10 +104,7 @@ export default {
   },
   apollo: {  
     clientConfigs: {
-      default: '@/apollo/configs/craft.js',
-      // default: {
-      //   httpEndpoint: process.env.BACKEND_URL || "https://dev.floorfiftyfour.konx.dev/api"
-      // }
+      default: '@/apollo/configs/craft.js'
     }
   },
   /*
