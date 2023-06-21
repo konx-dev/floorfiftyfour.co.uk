@@ -20,7 +20,7 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "graphql": "^15.8.0",
-    "nuxt": "^2.16.3",
+    "nuxt": "^3.4.3",
     "qs": "^6.11.1",
     "sass-loader": "^10.1.1",
     "vanilla-lazyload": "^17.8.3"
