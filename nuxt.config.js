@@ -56,9 +56,6 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // 'nuxt-purgecss',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-140024933-2' // UA-140024933-2
-    }],
     ['nuxt-fontawesome', {
       component: 'font-awesome-icon', //customize component name
       imports: [{
@@ -85,8 +82,14 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/apollo',
     '@nuxtjs/style-resources',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/gtm'
   ],
+
+  gtm: {
+    id: 'GTM-P5P78DJS'
+  },
+
   sitemap: {
     hostname: 'https://www.floorfiftyfour.co.uk/',
     gzip: true,

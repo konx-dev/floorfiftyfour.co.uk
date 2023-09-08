@@ -5,10 +5,10 @@
                 <h2 class="absolute inner__section-title text-center md:text-right text-white font-display uppercase text-xl md:text-4xl container mx-auto max-w-4xl">
                     Latest Blog Post
                 </h2>
-                <h3 class="text-2xl md:text-4xl font-display mb-4 leading-none">{{ LatestPost.hero[0].heading }}</h3>
-                <div class="text-base md:text-xl" v-html="LatestPost.hero[0].description"></div>
+                <h3 class="text-2xl md:text-4xl font-display mb-4 leading-none">{{ latestPost.hero[0].heading }}</h3>
+                <div class="text-base md:text-xl" v-html="latestPost.hero[0].description"></div>
                 <div class="flex flex-col text-center md:text-left md:flex-row mt-5 md:mt-10">
-                    <nuxt-link class="btn font-display mb-4 md:mb-0 md:mr-4 border border-black bg-black text-white transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker" :to="'blog/' + LatestPost.slug + '/'">Read Now</nuxt-link>
+                    <nuxt-link class="btn font-display mb-4 md:mb-0 md:mr-4 border border-black bg-black text-white transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker" :to="'blog/' + latestPost.slug + '/'">Read Now</nuxt-link>
                     <nuxt-link class="py-4 font-display px-10 border border-black transition-all duration-500 ease-in-out hover:bg-grey-darker hover:border-grey-darker hover:text-white" to="/blog/">View All</nuxt-link>
                 </div>
             </div>
@@ -32,7 +32,7 @@ export default {
         }
     },
     computed: {
-        LatestPost() {
+        latestPost() {
 
             let arrayPos = 0
 
@@ -47,10 +47,10 @@ export default {
             }
         },
         featuredImage() {
-            if (this.LatestPost.hero[0].featuredImage[0].filename) {
-                return 'https://ik.imagekit.io/2lyxtm1dps/' + this.LatestPost.hero[0].featuredImage[0].filename + '?q=80&auto=format';
+            if (this.latestPost.hero[0].featuredImage.length > 0) {
+                return 'https://ik.imagekit.io/2lyxtm1dps/' + this.latestPost.hero[0].featuredImage[0].filename + '?q=80&auto=format';
             } else {
-                return 'no image provided'
+                return 'https://ik.imagekit.io/2lyxtm1dps/wallpaper-forest.jpg' + '?q=80&auto=format';
             }
         }
     },
@@ -97,3 +97,5 @@ export default {
 }
 
 </style>
+
+<!-- wallpaper-forest.jpg -->
