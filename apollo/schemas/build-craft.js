@@ -1,9 +1,7 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 
-require('dotenv').config()
-
-fetch(process.env.BACKEND_URL, {
+fetch("https://dev.floorfiftyfour.konx.dev/api", {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
