@@ -50,7 +50,9 @@ query item($slug: [String!], $limit: Int) {
                             id
                             linkLabel
                             itemType
-                            itemLink
+                            itemLink {
+                                url
+                            }
                         }
                     }
                 }
